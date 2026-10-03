@@ -72,6 +72,8 @@
             border-color: #ff3366;
             color: #ff3366;
         }
+        
+        /* تصميم البطاقات الأساسية */
         .card {
             background: #12151f;
             border-radius: 12px;
@@ -79,6 +81,21 @@
             margin-bottom: 12px;
             border: 1px solid #1c2130;
         }
+        
+        /* تلوين خلفيات المراكز الثلاثة الأولى */
+        .card.rank-1 {
+            background: linear-gradient(135deg, #e1b12c 0%, #12151f 55%);
+            border-color: #fbc531;
+        }
+        .card.rank-2 {
+            background: linear-gradient(135deg, #718093 0%, #12151f 55%);
+            border-color: #a4b0be;
+        }
+        .card.rank-3 {
+            background: linear-gradient(135deg, #e67e22 0%, #12151f 55%);
+            border-color: #f39c12;
+        }
+
         .card-top {
             display: flex;
             justify-content: space-between;
@@ -92,9 +109,10 @@
         }
         .rank-num {
             font-weight: bold;
-            color: #f39c12;
-            font-size: 16px;
+            font-size: 18px;
+            color: #ffffff;
         }
+
         .avatar {
             width: 45px;
             height: 45px;
@@ -108,7 +126,7 @@
         }
         .details {
             font-size: 12px;
-            color: #94a3b8;
+            color: #cbd5e1;
             margin-top: 2px;
         }
         .region {
@@ -124,7 +142,7 @@
             gap: 8px;
             overflow-x: auto;
             padding-top: 8px;
-            border-top: 1px solid #1c2130;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         .tier-box {
             background: #191e2c;
@@ -156,7 +174,7 @@
     <header>
         <div class="logo">MIKEY TIERS</div>
         <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-btn">
-            <span>Join Test Server</span>
+            <span>Join Discord</span>
         </a>
     </header>
 
@@ -173,7 +191,8 @@
         <div class="category-item">NethOP</div>
     </div>
 
-    <div class="card">
+    <!-- المركز الأول (أصفر) -->
+    <div class="card rank-1">
         <div class="card-top">
             <div class="player-main">
                 <span class="rank-num">1.</span>
@@ -185,45 +204,174 @@
             </div>
             <div class="region">EU</div>
         </div>
-        
         <div class="tiers-grid">
-            <div class="tier-box">
-                <span class="cat-name">Sword</span>
-                <span class="tier-val">HT1</span>
+            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val">HT1</span></div>
+            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+        </div>
+    </div>
+
+    <!-- المركز الثاني (فضي) -->
+    <div class="card rank-2">
+        <div class="card-top">
+            <div class="player-main">
+                <span class="rank-num">2.</span>
+                <img src="https://mc-heads.net/avatar/Mustfa_105/45" class="avatar" alt="skin">
+                <div>
+                    <div class="name">Mustfa_105</div>
+                    <div class="details">Combat Cadet (42 points)</div>
+                </div>
             </div>
-            <div class="tier-box">
-                <span class="cat-name">Axe</span>
-                <span class="tier-val unranked">Unranked</span>
+            <div class="region">EU</div>
+        </div>
+        <div class="tiers-grid">
+            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val">HT3</span></div>
+            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val">LT2</span></div>
+            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val">LT3</span></div>
+            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+        </div>
+    </div>
+
+    <!-- المركز الثالث (برتقالي) -->
+    <div class="card rank-3">
+        <div class="card-top">
+            <div class="player-main">
+                <span class="rank-num">3.</span>
+                <img src="https://mc-heads.net/avatar/iraizen/45" class="avatar" alt="skin">
+                <div>
+                    <div class="name">iraizen</div>
+                    <div class="details">Combat Cadet (38 points)</div>
+                </div>
             </div>
-            <div class="tier-box">
-                <span class="cat-name">Mace</span>
-                <span class="tier-val unranked">Unranked</span>
+            <div class="region">EU</div>
+        </div>
+        <div class="tiers-grid">
+            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val">LT3</span></div>
+            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val">HT4</span></div>
+            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val">HT4</span></div>
+            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+        </div>
+    </div>
+
+    <!-- المركز الرابع -->
+    <div class="card">
+        <div class="card-top">
+            <div class="player-main">
+                <span class="rank-num">4.</span>
+                <img src="https://mc-heads.net/avatar/Player4/45" class="avatar" alt="skin">
+                <div>
+                    <div class="name">Player_4</div>
+                    <div class="details">Combat Cadet (30 points)</div>
+                </div>
             </div>
-            <div class="tier-box">
-                <span class="cat-name">Spear Mace</span>
-                <span class="tier-val unranked">Unranked</span>
+            <div class="region">AS</div>
+        </div>
+        <div class="tiers-grid">
+            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val">LT4</span></div>
+            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+        </div>
+    </div>
+
+    <!-- المركز الخامس -->
+    <div class="card">
+        <div class="card-top">
+            <div class="player-main">
+                <span class="rank-num">5.</span>
+                <img src="https://mc-heads.net/avatar/Player5/45" class="avatar" alt="skin">
+                <div>
+                    <div class="name">Player_5</div>
+                    <div class="details">Combat Cadet (25 points)</div>
+                </div>
             </div>
-            <div class="tier-box">
-                <span class="cat-name">Crystal</span>
-                <span class="tier-val unranked">Unranked</span>
+            <div class="region">EU</div>
+        </div>
+        <div class="tiers-grid">
+            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val">LT4</span></div>
+            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+        </div>
+    </div>
+
+    <!-- المركز السادس -->
+    <div class="card">
+        <div class="card-top">
+            <div class="player-main">
+                <span class="rank-num">6.</span>
+                <img src="https://mc-heads.net/avatar/Player6/45" class="avatar" alt="skin">
+                <div>
+                    <div class="name">Player_6</div>
+                    <div class="details">Combat Cadet (20 points)</div>
+                </div>
             </div>
-            <div class="tier-box">
-                <span class="cat-name">Pot</span>
-                <span class="tier-val unranked">Unranked</span>
+            <div class="region">NA</div>
+        </div>
+        <div class="tiers-grid">
+            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+        </div>
+    </div>
+
+    <!-- المركز السابع -->
+    <div class="card">
+        <div class="card-top">
+            <div class="player-main">
+                <span class="rank-num">7.</span>
+                <img src="https://mc-heads.net/avatar/Player7/45" class="avatar" alt="skin">
+                <div>
+                    <div class="name">Player_7</div>
+                    <div class="details">Combat Cadet (15 points)</div>
+                </div>
             </div>
-            <div class="tier-box">
-                <span class="cat-name">SMP</span>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <span class="cat-name">UHC</span>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <span class="cat-name">NethOP</span>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
+            <div class="region">EU</div>
+        </div>
+        <div class="tiers-grid">
+            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
         </div>
     </div>
 
 </body>
+    </html>
