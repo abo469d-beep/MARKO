@@ -138,7 +138,7 @@
             font-weight: bold;
         }
         
-        /* تنسيق شبكة الأيقونات والتيرز تماماً كالـصورة */
+        /* تنسيق شبكة الأيقونات الدائرية والتيرز */
         .tiers-grid {
             display: flex;
             gap: 8px;
@@ -160,22 +160,27 @@
             gap: 5px;
         }
         
-        /* الأيقونات الدائرية للشكل المطلوب */
+        /* الأيقونات الدائرية بالكامل مع الصور المرفقة */
         .icon-circle {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             background: #12151f;
             border: 1px solid #2a344d;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #64748b;
+            overflow: hidden;
         }
-        /* تلوين الأيقونة النشطة إذا كان اللاعب مصنفاً فيها */
+        .icon-circle img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+
+        /* تلوين الإطار والأيقونة النشطة */
         .tier-box.active-tier .icon-circle {
             border-color: #fbbf24;
-            color: #fbbf24;
         }
         .tier-box.active-tier {
             border-color: #3b2e1a;
@@ -210,12 +215,9 @@
         <div class="category-item">Spear Mace</div>
         <div class="category-item">Crystal</div>
         <div class="category-item">Pot</div>
-        <div class="category-item">SMP</div>
-        <div class="category-item">UHC</div>
-        <div class="category-item">NethOP</div>
     </div>
 
-    <!-- المركز الأول (أصفر) -->
+    <!-- المركز الأول -->
     <div class="card rank-1">
         <div class="card-top">
             <div class="player-main">
@@ -230,45 +232,37 @@
         </div>
         <div class="tiers-grid">
             <div class="tier-box active-tier">
-                <div class="icon-circle">⚔️</div>
+                <div class="icon-circle"><img src="sword.svg" alt="Sword"></div>
                 <span class="tier-val">HT1</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🪓</div>
+                <div class="icon-circle"><img src="axe.svg" alt="Axe"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🔨</div>
+                <div class="icon-circle"><img src="mace.svg" alt="Mace"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🗡️</div>
+                <div class="icon-circle"><img src="spearmace.svg" alt="Spear Mace"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">💎</div>
+                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🧪</div>
+                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🛡️</div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle">🍎</div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle">🔮</div>
+                <div class="icon-circle"><img src="vanilla.svg" alt="Vanilla"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
         </div>
     </div>
 
-    <!-- المركز الثاني (فضي) -->
+    <!-- المركز الثاني -->
     <div class="card rank-2">
         <div class="card-top">
             <div class="player-main">
@@ -283,45 +277,37 @@
         </div>
         <div class="tiers-grid">
             <div class="tier-box active-tier">
-                <div class="icon-circle">⚔️</div>
+                <div class="icon-circle"><img src="sword.svg" alt="Sword"></div>
                 <span class="tier-val">HT3</span>
             </div>
             <div class="tier-box active-tier">
-                <div class="icon-circle">🪓</div>
+                <div class="icon-circle"><img src="axe.svg" alt="Axe"></div>
                 <span class="tier-val">LT2</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🔨</div>
+                <div class="icon-circle"><img src="mace.svg" alt="Mace"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🗡️</div>
+                <div class="icon-circle"><img src="spearmace.svg" alt="Spear Mace"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box active-tier">
-                <div class="icon-circle">💎</div>
+                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
                 <span class="tier-val">LT3</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🧪</div>
+                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🛡️</div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle">🍎</div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle">🔮</div>
+                <div class="icon-circle"><img src="vanilla.svg" alt="Vanilla"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
         </div>
     </div>
 
-    <!-- المركز الثالث (برتقالي) -->
+    <!-- المركز الثالث -->
     <div class="card rank-3">
         <div class="card-top">
             <div class="player-main">
@@ -336,142 +322,33 @@
         </div>
         <div class="tiers-grid">
             <div class="tier-box active-tier">
-                <div class="icon-circle">⚔️</div>
+                <div class="icon-circle"><img src="sword.svg" alt="Sword"></div>
                 <span class="tier-val">LT3</span>
             </div>
             <div class="tier-box active-tier">
-                <div class="icon-circle">🪓</div>
+                <div class="icon-circle"><img src="axe.svg" alt="Axe"></div>
                 <span class="tier-val">HT4</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🔨</div>
+                <div class="icon-circle"><img src="mace.svg" alt="Mace"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🗡️</div>
+                <div class="icon-circle"><img src="spearmace.svg" alt="Spear Mace"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box active-tier">
-                <div class="icon-circle">💎</div>
+                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
                 <span class="tier-val">HT4</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🧪</div>
+                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
             <div class="tier-box">
-                <div class="icon-circle">🛡️</div>
+                <div class="icon-circle"><img src="vanilla.svg" alt="Vanilla"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
-            <div class="tier-box">
-                <div class="icon-circle">🍎</div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle">🔮</div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- المراكز من 4 إلى 7 (تأخذ التصميم الداكن الفخم) -->
-    <div class="card">
-        <div class="card-top">
-            <div class="player-main">
-                <span class="rank-num">4.</span>
-                <img src="https://mc-heads.net/avatar/Player4/45" class="avatar" alt="skin">
-                <div>
-                    <div class="name">Player_4</div>
-                    <div class="details">Combat Cadet (30 points)</div>
-                </div>
-            </div>
-            <div class="region">AS</div>
-        </div>
-        <div class="tiers-grid">
-            <div class="tier-box active-tier"><div class="icon-circle">⚔️</div><span class="tier-val">LT4</span></div>
-            <div class="tier-box"><div class="icon-circle">🪓</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🗡️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">💎</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🛡️️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🍎</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🔮</div><span class="tier-val unranked">Unranked</span></div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-top">
-            <div class="player-main">
-                <span class="rank-num">5.</span>
-                <img src="https://mc-heads.net/avatar/Player5/45" class="avatar" alt="skin">
-                <div>
-                    <div class="name">Player_5</div>
-                    <div class="details">Combat Cadet (25 points)</div>
-                </div>
-            </div>
-            <div class="region">EU</div>
-        </div>
-        <div class="tiers-grid">
-            <div class="tier-box"><div class="icon-circle">⚔️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box active-tier"><div class="icon-circle">🪓</div><span class="tier-val">LT4</span></div>
-            <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🗡️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">💎</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🍎</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🔮</div><span class="tier-val unranked">Unranked</span></div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-top">
-            <div class="player-main">
-                <span class="rank-num">6.</span>
-                <img src="https://mc-heads.net/avatar/Player6/45" class="avatar" alt="skin">
-                <div>
-                    <div class="name">Player_6</div>
-                    <div class="details">Combat Cadet (20 points)</div>
-                </div>
-            </div>
-            <div class="region">NA</div>
-        </div>
-        <div class="tiers-grid">
-            <div class="tier-box"><div class="icon-circle">⚔️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🪓</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🗡️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">💎</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🍎</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🔮</div><span class="tier-val unranked">Unranked</span></div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-top">
-            <div class="player-main">
-                <span class="rank-num">7.</span>
-                <img src="https://mc-heads.net/avatar/Player7/45" class="avatar" alt="skin">
-                <div>
-                    <div class="name">Player_7</div>
-                    <div class="details">Combat Cadet (15 points)</div>
-                </div>
-            </div>
-            <div class="region">EU</div>
-        </div>
-        <div class="tiers-grid">
-            <div class="tier-box"><div class="icon-circle">⚔️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🪓</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🗡️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">💎</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🍎</div><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><div class="icon-circle">🔮</div><span class="tier-val unranked">Unranked</span></div>
         </div>
     </div>
 
