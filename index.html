@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الياقوت مستويات - Ruby Tiers</title>
+    <title>MIKEY TIERS</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,7 +12,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #0d0f18;
+            background-color: #0b0d14;
             color: #ffffff;
             padding: 10px;
         }
@@ -20,15 +20,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #151824;
+            background: #12151f;
             padding: 15px;
             border-radius: 12px;
             margin-bottom: 15px;
+            border: 1px solid #1c2130;
         }
         .logo {
             font-size: 20px;
             font-weight: bold;
             color: #ff3366;
+            letter-spacing: 1px;
         }
         .discord-btn {
             background-color: #5865F2;
@@ -39,7 +41,10 @@
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         .categories {
             display: flex;
@@ -49,33 +54,41 @@
             margin-bottom: 15px;
         }
         .category-item {
-            background: #1a1e29;
-            padding: 8px 15px;
-            border-radius: 20px;
+            background: #161a26;
+            padding: 8px 14px;
+            border-radius: 12px;
             white-space: nowrap;
             font-size: 13px;
-            border: 1px solid #2a2f45;
+            border: 1px solid #22283d;
             cursor: pointer;
+            color: #94a3b8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
         }
         .category-item.active {
-            background: #251e30;
+            background: #251622;
             border-color: #ff3366;
             color: #ff3366;
         }
         .card {
-            background: #151824;
+            background: #12151f;
             border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 10px;
+            padding: 14px;
+            margin-bottom: 12px;
+            border: 1px solid #1c2130;
+        }
+        .card-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid #222639;
+            margin-bottom: 12px;
         }
-        .player-info {
+        .player-main {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .rank-num {
             font-weight: bold;
@@ -83,80 +96,134 @@
             font-size: 16px;
         }
         .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
-            background: #2a2f45;
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            background: #1c2130;
         }
         .name {
             font-weight: bold;
-            font-size: 15px;
+            font-size: 16px;
+            color: #ffffff;
         }
         .details {
             font-size: 12px;
-            color: #8b9bb4;
+            color: #94a3b8;
+            margin-top: 2px;
         }
         .region {
-            background: #0e3a24;
-            color: #2ecc71;
-            padding: 5px 10px;
+            background: #064e3b;
+            color: #34d399;
+            padding: 4px 10px;
             border-radius: 6px;
             font-size: 12px;
             font-weight: bold;
         }
-        .tier-badge {
-            background: #222639;
-            padding: 4px 8px;
-            border-radius: 4px;
+        .tiers-grid {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-top: 8px;
+            border-top: 1px solid #1c2130;
+        }
+        .tier-box {
+            background: #191e2c;
+            border: 1px solid #252d42;
+            padding: 6px 8px;
+            border-radius: 8px;
             font-size: 11px;
-            color: #f1c40f;
+            text-align: center;
+            min-width: 65px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .tier-box .cat-name {
+            color: #94a3b8;
+            font-size: 10px;
+        }
+        .tier-box .tier-val {
+            color: #fbbf24;
             font-weight: bold;
+        }
+        .tier-box .tier-val.unranked {
+            color: #64748b;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">الياقوت مستويات</div>
-        <a href="رابط_سيرفر_الديسكورد_هنا" class="discord-btn">انضم إلى خادم الاختبار</a>
+        <div class="logo">MIKEY TIERS</div>
+        <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-btn">
+            <span>Join Test Server</span>
+        </a>
     </header>
 
-    <!-- أقسام الكاتات -->
     <div class="categories">
-        <div class="category-item active">إجمالي</div>
-        <div class="category-item">سيف (Sword)</div>
-        <div class="category-item">بوت (Pot)</div>
-        <div class="category-item">فانيلا</div>
-        <div class="category-item">UHC</div>
+        <div class="category-item active">Overall</div>
+        <div class="category-item">Sword</div>
+        <div class="category-item">Axe</div>
+        <div class="category-item">Mace</div>
+        <div class="category-item">Spear Mace</div>
+        <div class="category-item">Crystal</div>
+        <div class="category-item">Pot</div>
         <div class="category-item">SMP</div>
+        <div class="category-item">UHC</div>
+        <div class="category-item">NethOP</div>
     </div>
 
-    <!-- بطاقة اللاعب الأول -->
     <div class="card">
-        <div class="player-info">
-            <span class="rank-num">1.</span>
-            <!-- سكين ماين كرافت يجلب تلقائياً بناءً على اسم اللاعب -->
-            <img src="https://mc-heads.net/avatar/iRuby_X/40" class="avatar" alt="skin">
-            <div>
-                <div class="name">iRuby_X</div>
-                <div class="details">(60 نقطة) متخصص قتالي • <span class="tier-badge">HT1 (Sword)</span></div>
+        <div class="card-top">
+            <div class="player-main">
+                <span class="rank-num">1.</span>
+                <img src="https://mc-heads.net/avatar/iRuby_X/45" class="avatar" alt="skin">
+                <div>
+                    <div class="name">iRuby_X</div>
+                    <div class="details">Combat Specialist (60 points)</div>
+                </div>
+            </div>
+            <div class="region">EU</div>
+        </div>
+        
+        <div class="tiers-grid">
+            <div class="tier-box">
+                <span class="cat-name">Sword</span>
+                <span class="tier-val">HT1</span>
+            </div>
+            <div class="tier-box">
+                <span class="cat-name">Axe</span>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <span class="cat-name">Mace</span>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <span class="cat-name">Spear Mace</span>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <span class="cat-name">Crystal</span>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <span class="cat-name">Pot</span>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <span class="cat-name">SMP</span>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <span class="cat-name">UHC</span>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <span class="cat-name">NethOP</span>
+                <span class="tier-val unranked">Unranked</span>
             </div>
         </div>
-        <div class="region">الاتحاد الأوروبي</div>
-    </div>
-
-    <!-- بطاقة اللاعب الثاني -->
-    <div class="card">
-        <div class="player-info">
-            <span class="rank-num">2.</span>
-            <img src="https://mc-heads.net/avatar/Mustfa_105/40" class="avatar" alt="skin">
-            <div>
-                <div class="name">Mustfa_105</div>
-                <div class="details">(42 نقطة) طالب عسكري • <span class="tier-badge">LT3 (SMP)</span></div>
-            </div>
-        </div>
-        <div class="region">الاتحاد الأوروبي</div>
     </div>
 
 </body>
-</html>
