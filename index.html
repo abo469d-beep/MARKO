@@ -23,7 +23,7 @@
             background: #12151f;
             padding: 15px;
             border-radius: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border: 1px solid #1c2130;
         }
         .logo {
@@ -46,6 +46,41 @@
             align-items: center;
             gap: 5px;
         }
+        
+        /* قسم المعلومات العلوي */
+        .info-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #12151f;
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #1c2130;
+        }
+        .info-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-icon-box {
+            background: #191e2c;
+            border: 1px solid #252d42;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #ffffff;
+        }
+        .info-text {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+        .info-text span {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
         .categories {
             display: flex;
             gap: 10px;
@@ -82,7 +117,6 @@
             border: 1px solid #1c2130;
         }
         
-        /* تلوين خلفيات المراكز الثلاثة الأولى */
         .card.rank-1 {
             background: linear-gradient(135deg, #e1b12c 0%, #12151f 55%);
             border-color: #fbc531;
@@ -112,7 +146,6 @@
             font-size: 18px;
             color: #ffffff;
         }
-
         .avatar {
             width: 45px;
             height: 45px;
@@ -138,7 +171,6 @@
             font-weight: bold;
         }
         
-        /* تنسيق شبكة الأيقونات الدائرية والتيرز */
         .tiers-grid {
             display: flex;
             gap: 8px;
@@ -160,7 +192,6 @@
             gap: 5px;
         }
         
-        /* الأيقونات الدائرية بالكامل مع الصور المرفقة */
         .icon-circle {
             width: 32px;
             height: 32px;
@@ -178,7 +209,6 @@
             object-fit: contain;
         }
 
-        /* تلوين الإطار والأيقونة النشطة */
         .tier-box.active-tier .icon-circle {
             border-color: #fbbf24;
         }
@@ -207,14 +237,29 @@
         </a>
     </header>
 
+    <!-- قسم المعلومات الجديد -->
+    <div class="info-card">
+        <div class="info-left">
+            <div class="info-icon-box">Info</div>
+            <div class="info-text">
+                Tests are held on Discord<br>
+                <span>Mikey Tiers Server</span>
+            </div>
+        </div>
+        <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-btn">
+            <span>Join</span>
+        </a>
+    </div>
+
     <div class="categories">
         <div class="category-item active">Overall</div>
+        <div class="category-item">Pot</div>
+        <div class="category-item">NethOp</div>
+        <div class="category-item">SMP</div>
         <div class="category-item">Sword</div>
         <div class="category-item">Axe</div>
         <div class="category-item">Mace</div>
         <div class="category-item">Spear Mace</div>
-        <div class="category-item">Crystal</div>
-        <div class="category-item">Pot</div>
     </div>
 
     <!-- المركز الأول -->
@@ -231,6 +276,18 @@
             <div class="region">EU</div>
         </div>
         <div class="tiers-grid">
+            <div class="tier-box">
+                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle"><img src="nethop.svg" alt="NethOp"></div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
             <div class="tier-box active-tier">
                 <div class="icon-circle"><img src="sword.svg" alt="Sword"></div>
                 <span class="tier-val">HT1</span>
@@ -245,18 +302,6 @@
             </div>
             <div class="tier-box">
                 <div class="icon-circle"><img src="spearmace.svg" alt="Spear Mace"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="vanilla.svg" alt="Vanilla"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
         </div>
@@ -276,6 +321,18 @@
             <div class="region">EU</div>
         </div>
         <div class="tiers-grid">
+            <div class="tier-box">
+                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle"><img src="nethop.svg" alt="NethOp"></div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box active-tier">
+                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
+                <span class="tier-val">LT3</span>
+            </div>
             <div class="tier-box active-tier">
                 <div class="icon-circle"><img src="sword.svg" alt="Sword"></div>
                 <span class="tier-val">HT3</span>
@@ -290,18 +347,6 @@
             </div>
             <div class="tier-box">
                 <div class="icon-circle"><img src="spearmace.svg" alt="Spear Mace"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box active-tier">
-                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
-                <span class="tier-val">LT3</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="vanilla.svg" alt="Vanilla"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
         </div>
@@ -321,6 +366,18 @@
             <div class="region">EU</div>
         </div>
         <div class="tiers-grid">
+            <div class="tier-box">
+                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle"><img src="nethop.svg" alt="NethOp"></div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box active-tier">
+                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
+                <span class="tier-val">HT4</span>
+            </div>
             <div class="tier-box active-tier">
                 <div class="icon-circle"><img src="sword.svg" alt="Sword"></div>
                 <span class="tier-val">LT3</span>
@@ -335,18 +392,6 @@
             </div>
             <div class="tier-box">
                 <div class="icon-circle"><img src="spearmace.svg" alt="Spear Mace"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box active-tier">
-                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
-                <span class="tier-val">HT4</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="vanilla.svg" alt="Vanilla"></div>
                 <span class="tier-val unranked">Unranked</span>
             </div>
         </div>
