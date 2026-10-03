@@ -210,24 +210,48 @@
             height: 18px;
             object-fit: contain;
         }
-        .tier-box.active-tier .icon-circle {
-            border-color: #fbbf24;
-        }
-        .tier-box.active-tier {
-            border-color: #3b2e1a;
-            background: #1c191a;
-        }
-        .tier-val {
-            color: #fbbf24;
-            font-weight: bold;
-            font-size: 11px;
+        
+        .tier-box.unranked {
+            border-color: #252d42;
+            background: #191e2c;
         }
         .tier-val.unranked {
             color: #64748b;
             font-size: 10px;
         }
 
-        /* نافذة المعلومات المنبثقة Modal */
+        /* تخصيص الألوان حسب رتب الديسكورد الحقيقية */
+        .tier-box.ht1 { border-color: #f1c40f; background: #2c2514; }
+        .tier-val.ht1 { color: #f1c40f; font-weight: bold; }
+
+        .tier-box.lt1 { border-color: #e67e22; background: #2c1d14; }
+        .tier-val.lt1 { color: #e67e22; font-weight: bold; }
+
+        .tier-box.ht2 { border-color: #d35400; background: #2c1811; }
+        .tier-val.ht2 { color: #d35400; font-weight: bold; }
+
+        .tier-box.lt2 { border-color: #a04000; background: #24140f; }
+        .tier-val.lt2 { color: #a04000; font-weight: bold; }
+
+        .tier-box.ht3 { border-color: #e74c3c; background: #2c1515; }
+        .tier-val.ht3 { color: #e74c3c; font-weight: bold; }
+
+        .tier-box.lt3 { border-color: #c0392b; background: #251212; }
+        .tier-val.lt3 { color: #c0392b; font-weight: bold; }
+
+        .tier-box.ht4 { border-color: #9b59b6; background: #201325; }
+        .tier-val.ht4 { color: #9b59b6; font-weight: bold; }
+
+        .tier-box.lt4 { border-color: #8e44ad; background: #1c1022; }
+        .tier-val.lt4 { color: #8e44ad; font-weight: bold; }
+
+        .tier-box.ht5 { border-color: #5dade2; background: #13222a; }
+        .tier-val.ht5 { color: #5dade2; font-weight: bold; }
+
+        .tier-box.lt5 { border-color: #2980b9; background: #101c26; }
+        .tier-val.lt5 { color: #2980b9; font-weight: bold; }
+
+        /* نافذة معلومات النقاط والألقاب */
         .modal {
             display: none;
             position: fixed;
@@ -310,7 +334,7 @@
         </a>
     </div>
 
-    <!-- الأزرار العلوية للفرز (ترتيب الأقوى في كل تخصص) -->
+    <!-- الأزرار العلوية للفرز الفوري (الترتيب من الأقوى للأضعف) -->
     <div class="categories">
         <div class="category-item active" onclick="filterCategory('overall', this)">Overall</div>
         <div class="category-item" onclick="filterCategory('pot', this)">Pot</div>
@@ -337,18 +361,18 @@
                 <div class="region">EU</div>
             </div>
             <div class="tiers-grid">
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2394a3b8" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2394a3b8" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%2394a3b8" alt="SMP"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box active-tier"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23fbbf24" alt="Sword"></div><span class="tier-val">HT1</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%2394a3b8" alt="Axe"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2394a3b8" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2394a3b8" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2364748b" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2364748b" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%2364748b" alt="SMP"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box ht1"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23f1c40f" alt="Sword"></div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%2364748b" alt="Axe"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2364748b" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2364748b" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
 
         <!-- المركز الثاني -->
-        <div class="card rank-2" data-pot="99" data-nethop="99" data-smp="3" data-sword="3" data-axe="2" data-mace="99" data-spearmace="99" data-score="42">
+        <div class="card rank-2" data-pot="99" data-nethop="99" data-smp="8" data-sword="5" data-axe="4" data-mace="99" data-spearmace="99" data-score="42">
             <div class="card-top">
                 <div class="player-main">
                     <span class="rank-num">2.</span>
@@ -361,18 +385,18 @@
                 <div class="region">EU</div>
             </div>
             <div class="tiers-grid">
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2394a3b8" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2394a3b8" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box active-tier"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%23fbbf24" alt="SMP"></div><span class="tier-val">LT3</span></div>
-                <div class="tier-box active-tier"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23fbbf24" alt="Sword"></div><span class="tier-val">HT3</span></div>
-                <div class="tier-box active-tier"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%23fbbf24" alt="Axe"></div><span class="tier-val">LT2</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2394a3b8" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2394a3b8" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2364748b" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2364748b" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box lt3"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%23c0392b" alt="SMP"></div><span class="tier-val lt3">LT3</span></div>
+                <div class="tier-box ht3"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23e74c3c" alt="Sword"></div><span class="tier-val ht3">HT3</span></div>
+                <div class="tier-box lt2"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%23a04000" alt="Axe"></div><span class="tier-val lt2">LT2</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2364748b" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2364748b" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
 
         <!-- المركز الثالث -->
-        <div class="card rank-3" data-pot="99" data-nethop="99" data-smp="4" data-sword="3" data-axe="4" data-mace="99" data-spearmace="99" data-score="38">
+        <div class="card rank-3" data-pot="99" data-nethop="99" data-smp="7" data-sword="6" data-axe="7" data-mace="99" data-spearmace="99" data-score="38">
             <div class="card-top">
                 <div class="player-main">
                     <span class="rank-num">3.</span>
@@ -385,13 +409,13 @@
                 <div class="region">EU</div>
             </div>
             <div class="tiers-grid">
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2394a3b8" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2394a3b8" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box active-tier"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%23fbbf24" alt="SMP"></div><span class="tier-val">HT4</span></div>
-                <div class="tier-box active-tier"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23fbbf24" alt="Sword"></div><span class="tier-val">LT3</span></div>
-                <div class="tier-box active-tier"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%23fbbf24" alt="Axe"></div><span class="tier-val">HT4</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2394a3b8" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2394a3b8" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2364748b" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2364748b" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box ht4"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%239b59b6" alt="SMP"></div><span class="tier-val ht4">HT4</span></div>
+                <div class="tier-box lt3"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23c0392b" alt="Sword"></div><span class="tier-val lt3">LT3</span></div>
+                <div class="tier-box ht4"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%239b59b6" alt="Axe"></div><span class="tier-val ht4">HT4</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2364748b" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2364748b" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
     </div>
@@ -447,7 +471,7 @@
                 });
             }
 
-            cards.forEach((card, index) => {
+            cards.forEach((card) => {
                 container.appendChild(card);
             });
         }
