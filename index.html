@@ -3,121 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الياقوت مستويات</title>
+    <title>الياقوت مستويات - Ruby Tiers</title>
     <style>
-        body {
-            background-color: #0f111a;
-            color: #ffffff;
-            font-family: Tahoma, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 15px;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .header {
+        body {
+            background-color: #0d0f18;
+            color: #ffffff;
+            padding: 10px;
+        }
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #16192b;
-            padding: 10px 15px;
-            border-radius: 8px;
+            background: #151824;
+            padding: 15px;
+            border-radius: 12px;
             margin-bottom: 15px;
         }
-        .header h1 {
-            color: #ff3366;
+        .logo {
             font-size: 20px;
-            margin: 0;
+            font-weight: bold;
+            color: #ff3366;
         }
         .discord-btn {
             background-color: #5865F2;
             color: white;
-            padding: 6px 12px;
-            border-radius: 5px;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
             text-decoration: none;
+            font-size: 14px;
+        }
+        .categories {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .category-item {
+            background: #1a1e29;
+            padding: 8px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
             font-size: 13px;
+            border: 1px solid #2a2f45;
+            cursor: pointer;
+        }
+        .category-item.active {
+            background: #251e30;
+            border-color: #ff3366;
+            color: #ff3366;
         }
         .card {
-            background-color: #1a1d2e;
-            border-radius: 10px;
+            background: #151824;
+            border-radius: 12px;
             padding: 12px;
             margin-bottom: 10px;
-            border: 1px solid #25283d;
-            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #222639;
         }
-        .top-1 { border-color: #ffaa00; }
-        .top-2 { border-color: #aaaaaa; }
-        .top-3 { border-color: #cd7f32; }
-        
         .player-info {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
         }
         .rank-num {
             font-weight: bold;
+            color: #f39c12;
             font-size: 16px;
-            color: #ffaa00;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            background: #2a2f45;
         }
         .name {
-            font-size: 16px;
             font-weight: bold;
+            font-size: 15px;
         }
         .details {
             font-size: 12px;
-            color: #b8b8b8;
+            color: #8b9bb4;
         }
-        .badges {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-            border-top: 1px solid #25283d;
-            padding-top: 8px;
+        .region {
+            background: #0e3a24;
+            color: #2ecc71;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
         }
-        .badge {
-            background: #25283d;
-            padding: 3px 8px;
+        .tier-badge {
+            background: #222639;
+            padding: 4px 8px;
             border-radius: 4px;
             font-size: 11px;
-            color: #cccccc;
+            color: #f1c40f;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>الياقوت مستويات</h1>
-        <a href="#" class="discord-btn">انضم إلى خادم الاختبار</a>
+    <header>
+        <div class="logo">الياقوت مستويات</div>
+        <a href="رابط_سيرفر_الديسكورد_هنا" class="discord-btn">انضم إلى خادم الاختبار</a>
+    </header>
+
+    <!-- أقسام الكاتات -->
+    <div class="categories">
+        <div class="category-item active">إجمالي</div>
+        <div class="category-item">سيف (Sword)</div>
+        <div class="category-item">بوت (Pot)</div>
+        <div class="category-item">فانيلا</div>
+        <div class="category-item">UHC</div>
+        <div class="category-item">SMP</div>
     </div>
 
-    <!-- اللاعب الأول -->
-    <div class="card top-1">
+    <!-- بطاقة اللاعب الأول -->
+    <div class="card">
         <div class="player-info">
             <span class="rank-num">1.</span>
+            <!-- سكين ماين كرافت يجلب تلقائياً بناءً على اسم اللاعب -->
+            <img src="https://mc-heads.net/avatar/iRuby_X/40" class="avatar" alt="skin">
             <div>
                 <div class="name">iRuby_X</div>
-                <div class="details">(60 نقطة) متخصص قتالي</div>
+                <div class="details">(60 نقطة) متخصص قتالي • <span class="tier-badge">HT1 (Sword)</span></div>
             </div>
         </div>
-        <div class="badges">
-            <span class="badge">⚔️ HT1</span>
-            <span class="badge">غير مصنف</span>
-            <span class="badge">غير مصنف</span>
-        </div>
+        <div class="region">الاتحاد الأوروبي</div>
     </div>
 
-    <!-- اللاعب الثاني -->
-    <div class="card top-2">
+    <!-- بطاقة اللاعب الثاني -->
+    <div class="card">
         <div class="player-info">
             <span class="rank-num">2.</span>
+            <img src="https://mc-heads.net/avatar/Mustfa_105/40" class="avatar" alt="skin">
             <div>
                 <div class="name">Mustfa_105</div>
-                <div class="details">(42 نقطة) طالب عسكري قتالي</div>
+                <div class="details">(42 نقطة) طالب عسكري • <span class="tier-badge">LT3 (SMP)</span></div>
             </div>
         </div>
-        <div class="badges">
-            <span class="badge">🛡️ LT3</span>
-            <span class="badge">غير مصنف</span>
-            <span class="badge">⚔️ HT3</span>
-        </div>
+        <div class="region">الاتحاد الأوروبي</div>
     </div>
 
 </body>
