@@ -47,7 +47,6 @@
             gap: 5px;
         }
         
-        /* قسم المعلومات العلوي الثابت بالإنجليزية */
         .info-card {
             display: flex;
             justify-content: space-between;
@@ -101,6 +100,7 @@
             flex-direction: column;
             align-items: center;
             gap: 4px;
+            transition: 0.2s;
         }
         .category-item.active {
             background: #251622;
@@ -108,7 +108,6 @@
             color: #ff3366;
         }
         
-        /* تصميم البطاقات الأساسية */
         .card {
             background: #12151f;
             border-radius: 12px;
@@ -116,7 +115,6 @@
             margin-bottom: 12px;
             border: 1px solid #1c2130;
         }
-        
         .card.rank-1 {
             background: linear-gradient(135deg, #e1b12c 0%, #12151f 55%);
             border-color: #fbc531;
@@ -191,7 +189,6 @@
             align-items: center;
             gap: 5px;
         }
-        
         .icon-circle {
             width: 32px;
             height: 32px;
@@ -202,13 +199,8 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            font-size: 16px;
         }
-        .icon-circle img {
-            width: 70%;
-            height: 70%;
-            object-fit: contain;
-        }
-
         .tier-box.active-tier .icon-circle {
             border-color: #fbbf24;
         }
@@ -216,7 +208,6 @@
             border-color: #3b2e1a;
             background: #1c191a;
         }
-
         .tier-val {
             color: #fbbf24;
             font-weight: bold;
@@ -237,7 +228,6 @@
         </a>
     </header>
 
-    <!-- صندوق المعلومات والخدمة -->
     <div class="info-card">
         <div class="info-left">
             <div class="info-icon-box">Info</div>
@@ -251,151 +241,119 @@
         </a>
     </div>
 
+    <!-- الأزرار العلوية للفرز حسب التخصص -->
     <div class="categories">
-        <div class="category-item active">Overall</div>
-        <div class="category-item">Pot</div>
-        <div class="category-item">NethOp</div>
-        <div class="category-item">SMP</div>
-        <div class="category-item">Sword</div>
-        <div class="category-item">Axe</div>
-        <div class="category-item">Mace</div>
-        <div class="category-item">Spear Mace</div>
+        <div class="category-item active" onclick="filterCategory('overall', this)">Overall</div>
+        <div class="category-item" onclick="filterCategory('pot', this)">Pot</div>
+        <div class="category-item" onclick="filterCategory('nethop', this)">NethOp</div>
+        <div class="category-item" onclick="filterCategory('smp', this)">SMP</div>
+        <div class="category-item" onclick="filterCategory('sword', this)">Sword</div>
+        <div class="category-item" onclick="filterCategory('axe', this)">Axe</div>
+        <div class="category-item" onclick="filterCategory('mace', this)">Mace</div>
+        <div class="category-item" onclick="filterCategory('spearmace', this)">Spear Mace</div>
     </div>
 
-    <!-- المركز الأول -->
-    <div class="card rank-1">
-        <div class="card-top">
-            <div class="player-main">
-                <span class="rank-num">1.</span>
-                <img src="https://mc-heads.net/avatar/iRuby_X/45" class="avatar" alt="skin">
-                <div>
-                    <div class="name">iRuby_X</div>
-                    <div class="details">Combat Specialist (60 points)</div>
+    <div id="players-container">
+        <!-- المركز الأول -->
+        <div class="card rank-1" data-pot="0" data-nethop="0" data-smp="0" data-sword="1" data-axe="0" data-mace="0" data-spearmace="0" data-score="60">
+            <div class="card-top">
+                <div class="player-main">
+                    <span class="rank-num">1.</span>
+                    <img src="https://mc-heads.net/avatar/iRuby_X/45" class="avatar" alt="skin">
+                    <div>
+                        <div class="name">iRuby_X</div>
+                        <div class="details">Combat Specialist (60 points)</div>
+                    </div>
                 </div>
+                <div class="region">EU</div>
             </div>
-            <div class="region">EU</div>
-        </div>
-        <div class="tiers-grid">
-            <div class="tier-box">
-                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="nethop.svg" alt="NethOp"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box active-tier">
-                <div class="icon-circle"><img src="sword.svg" alt="Sword"></div>
-                <span class="tier-val">HT1</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="axe.svg" alt="Axe"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="mace.svg" alt="Mace"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="spearmace.svg" alt="Spear Mace"></div>
-                <span class="tier-val unranked">Unranked</span>
+            <div class="tiers-grid">
+                <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box"><div class="icon-circle">🔮</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box active-tier"><div class="icon-circle">⚔️</div><span class="tier-val">HT1</span></div>
+                <div class="tier-box"><div class="icon-circle">🪓</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box"><div class="icon-circle">🔱</div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
-    </div>
 
-    <!-- المركز الثاني -->
-    <div class="card rank-2">
-        <div class="card-top">
-            <div class="player-main">
-                <span class="rank-num">2.</span>
-                <img src="https://mc-heads.net/avatar/Mustfa_105/45" class="avatar" alt="skin">
-                <div>
-                    <div class="name">Mustfa_105</div>
-                    <div class="details">Combat Cadet (42 points)</div>
+        <!-- المركز الثاني -->
+        <div class="card rank-2" data-pot="0" data-nethop="0" data-smp="3" data-sword="3" data-axe="2" data-mace="0" data-spearmace="0" data-score="42">
+            <div class="card-top">
+                <div class="player-main">
+                    <span class="rank-num">2.</span>
+                    <img src="https://mc-heads.net/avatar/Mustfa_105/45" class="avatar" alt="skin">
+                    <div>
+                        <div class="name">Mustfa_105</div>
+                        <div class="details">Combat Cadet (42 points)</div>
+                    </div>
                 </div>
+                <div class="region">EU</div>
             </div>
-            <div class="region">EU</div>
-        </div>
-        <div class="tiers-grid">
-            <div class="tier-box">
-                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="nethop.svg" alt="NethOp"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box active-tier">
-                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
-                <span class="tier-val">LT3</span>
-            </div>
-            <div class="tier-box active-tier">
-                <div class="icon-circle"><img src="sword.svg" alt="Sword"></div>
-                <span class="tier-val">HT3</span>
-            </div>
-            <div class="tier-box active-tier">
-                <div class="icon-circle"><img src="axe.svg" alt="Axe"></div>
-                <span class="tier-val">LT2</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="mace.svg" alt="Mace"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="spearmace.svg" alt="Spear Mace"></div>
-                <span class="tier-val unranked">Unranked</span>
+            <div class="tiers-grid">
+                <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box active-tier"><div class="icon-circle">🔮</div><span class="tier-val">LT3</span></div>
+                <div class="tier-box active-tier"><div class="icon-circle">⚔️</div><span class="tier-val">HT3</span></div>
+                <div class="tier-box active-tier"><div class="icon-circle">🪓</div><span class="tier-val">LT2</span></div>
+                <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box"><div class="icon-circle">🔱</div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
-    </div>
 
-    <!-- المركز الثالث -->
-    <div class="card rank-3">
-        <div class="card-top">
-            <div class="player-main">
-                <span class="rank-num">3.</span>
-                <img src="https://mc-heads.net/avatar/iraizen/45" class="avatar" alt="skin">
-                <div>
-                    <div class="name">iraizen</div>
-                    <div class="details">Combat Cadet (38 points)</div>
+        <!-- المركز الثالث -->
+        <div class="card rank-3" data-pot="0" data-nethop="0" data-smp="4" data-sword="3" data-axe="4" data-mace="0" data-spearmace="0" data-score="38">
+            <div class="card-top">
+                <div class="player-main">
+                    <span class="rank-num">3.</span>
+                    <img src="https://mc-heads.net/avatar/iraizen/45" class="avatar" alt="skin">
+                    <div>
+                        <div class="name">iraizen</div>
+                        <div class="details">Combat Cadet (38 points)</div>
+                    </div>
                 </div>
+                <div class="region">EU</div>
             </div>
-            <div class="region">EU</div>
-        </div>
-        <div class="tiers-grid">
-            <div class="tier-box">
-                <div class="icon-circle"><img src="pot.svg" alt="Pot"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="nethop.svg" alt="NethOp"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box active-tier">
-                <div class="icon-circle"><img src="smp.svg" alt="SMP"></div>
-                <span class="tier-val">HT4</span>
-            </div>
-            <div class="tier-box active-tier">
-                <div class="icon-circle"><img src="sword.svg" alt="Sword"></div>
-                <span class="tier-val">LT3</span>
-            </div>
-            <div class="tier-box active-tier">
-                <div class="icon-circle"><img src="axe.svg" alt="Axe"></div>
-                <span class="tier-val">HT4</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="mace.svg" alt="Mace"></div>
-                <span class="tier-val unranked">Unranked</span>
-            </div>
-            <div class="tier-box">
-                <div class="icon-circle"><img src="spearmace.svg" alt="Spear Mace"></div>
-                <span class="tier-val unranked">Unranked</span>
+            <div class="tiers-grid">
+                <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box active-tier"><div class="icon-circle">🔮</div><span class="tier-val">HT4</span></div>
+                <div class="tier-box active-tier"><div class="icon-circle">⚔️️</div><span class="tier-val">LT3</span></div>
+                <div class="tier-box active-tier"><div class="icon-circle">🪓</div><span class="tier-val">HT4</span></div>
+                <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box"><div class="icon-circle5">🔱</div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
     </div>
 
+    <script>
+        function filterCategory(category, element) {
+            // تحديث تصميم الأزرار (تحديد الزر المختار)
+            document.querySelectorAll('.category-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+
+            const container = document.getElementById('players-container');
+            const cards = Array.from(container.getElementsByClassName('card'));
+
+            if (category === 'overall') {
+                // إعادة الترتيب حسب النقاط الإجمالية
+                cards.sort((a, b) => parseInt(b.dataset.score) - parseInt(a.dataset.score));
+            } else {
+                // الفرز حسب التخصص المختار (ترتيب تنازلي حسب قوة الترتيب أو ظهور المصنفين أولاً)
+                cards.sort((a, b) => {
+                    let valA = parseInt(a.dataset[category]) || 99;
+                    let valB = parseInt(b.dataset[category]) || 99;
+                    return valA - valB;
+                });
+            }
+
+            // إعادة إدراج البطاقات بالترتيب الجديد داخل الصفحة
+            cards.forEach((card, index) => {
+                card.style.order = index + 1;
+                container.appendChild(card);
+            });
+        }
+    </script>
 </body>
 </html>
