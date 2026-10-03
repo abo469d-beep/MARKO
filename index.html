@@ -121,16 +121,16 @@
             border: 1px solid #1c2130;
         }
         .card.rank-1 {
-            background: linear-gradient(135deg, #e1b12c 0%, #12151f 55%);
-            border-color: #fbc531;
+            background: linear-gradient(135deg, rgba(241, 196, 15, 0.15) 0%, #12151f 55%);
+            border-color: #f1c40f;
         }
         .card.rank-2 {
-            background: linear-gradient(135deg, #718093 0%, #12151f 55%);
+            background: linear-gradient(135deg, rgba(164, 176, 190, 0.15) 0%, #12151f 55%);
             border-color: #a4b0be;
         }
         .card.rank-3 {
-            background: linear-gradient(135deg, #e67e22 0%, #12151f 55%);
-            border-color: #f39c12;
+            background: linear-gradient(135deg, rgba(230, 126, 34, 0.15) 0%, #12151f 55%);
+            border-color: #e67e22;
         }
 
         .card-top {
@@ -152,8 +152,14 @@
         .avatar {
             width: 45px;
             height: 45px;
-            border-radius: 8px;
-            background: #1c2130;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #ff3366, #5865F2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
         }
         .name {
             font-weight: bold;
@@ -195,20 +201,15 @@
             gap: 5px;
         }
         .icon-circle {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             background: #12151f;
             border: 1px solid #2a344d;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-        }
-        .icon-circle img {
-            width: 18px;
-            height: 18px;
-            object-fit: contain;
+            font-size: 14px;
         }
         
         .tier-box.unranked {
@@ -220,18 +221,18 @@
             font-size: 10px;
         }
 
-        /* تخصيص الألوان حسب رتب الديسكورد الحقيقية */
+        /* ألوان الرتب الدقيقة كما طلبت */
         .tier-box.ht1 { border-color: #f1c40f; background: #2c2514; }
         .tier-val.ht1 { color: #f1c40f; font-weight: bold; }
 
-        .tier-box.lt1 { border-color: #e67e22; background: #2c1d14; }
-        .tier-val.lt1 { color: #e67e22; font-weight: bold; }
+        .tier-box.lt1 { border-color: #f39c12; background: #2c1f10; }
+        .tier-val.lt1 { color: #f39c12; font-weight: bold; }
 
-        .tier-box.ht2 { border-color: #d35400; background: #2c1811; }
-        .tier-val.ht2 { color: #d35400; font-weight: bold; }
+        .tier-box.ht2 { border-color: #e67e22; background: #2c1d14; }
+        .tier-val.ht2 { color: #e67e22; font-weight: bold; }
 
-        .tier-box.lt2 { border-color: #a04000; background: #24140f; }
-        .tier-val.lt2 { color: #a04000; font-weight: bold; }
+        .tier-box.lt2 { border-color: #d35400; background: #2c1811; }
+        .tier-val.lt2 { color: #d35400; font-weight: bold; }
 
         .tier-box.ht3 { border-color: #e74c3c; background: #2c1515; }
         .tier-val.ht3 { color: #e74c3c; font-weight: bold; }
@@ -251,7 +252,7 @@
         .tier-box.lt5 { border-color: #2980b9; background: #101c26; }
         .tier-val.lt5 { color: #2980b9; font-weight: bold; }
 
-        /* نافذة معلومات النقاط والألقاب */
+        /* نافذة معلومات النقاط */
         .modal {
             display: none;
             position: fixed;
@@ -334,7 +335,7 @@
         </a>
     </div>
 
-    <!-- الأزرار العلوية للفرز الفوري (الترتيب من الأقوى للأضعف) -->
+    <!-- الأزرار العلوية للفرز الفوري -->
     <div class="categories">
         <div class="category-item active" onclick="filterCategory('overall', this)">Overall</div>
         <div class="category-item" onclick="filterCategory('pot', this)">Pot</div>
@@ -352,7 +353,7 @@
             <div class="card-top">
                 <div class="player-main">
                     <span class="rank-num">1.</span>
-                    <img src="https://mc-heads.net/avatar/iRuby_X/45" class="avatar" alt="skin">
+                    <div class="avatar">i</div>
                     <div>
                         <div class="name">iRuby_X</div>
                         <div class="details">Combat Specialist (60 points)</div>
@@ -361,22 +362,22 @@
                 <div class="region">EU</div>
             </div>
             <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2364748b" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2364748b" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%2364748b" alt="SMP"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box ht1"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23f1c40f" alt="Sword"></div><span class="tier-val ht1">HT1</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%2364748b" alt="Axe"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2364748b" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2364748b" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">💎</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box ht1"><div class="icon-circle">⚔️</div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🪓</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🔱</div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
 
         <!-- المركز الثاني -->
-        <div class="card rank-2" data-pot="99" data-nethop="99" data-smp="8" data-sword="5" data-axe="4" data-mace="99" data-spearmace="99" data-score="42">
+        <div class="card rank-2" data-pot="99" data-nethop="99" data-smp="6" data-sword="3" data-axe="2" data-mace="99" data-spearmace="99" data-score="42">
             <div class="card-top">
                 <div class="player-main">
                     <span class="rank-num">2.</span>
-                    <img src="https://mc-heads.net/avatar/Mustfa_105/45" class="avatar" alt="skin">
+                    <div class="avatar" style="background: linear-gradient(135deg, #e74c3c, #8e44ad);">M</div>
                     <div>
                         <div class="name">Mustfa_105</div>
                         <div class="details">Combat Cadet (42 points)</div>
@@ -385,22 +386,22 @@
                 <div class="region">EU</div>
             </div>
             <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2364748b" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2364748b" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box lt3"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%23c0392b" alt="SMP"></div><span class="tier-val lt3">LT3</span></div>
-                <div class="tier-box ht3"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23e74c3c" alt="Sword"></div><span class="tier-val ht3">HT3</span></div>
-                <div class="tier-box lt2"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%23a04000" alt="Axe"></div><span class="tier-val lt2">LT2</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2364748b" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2364748b" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box lt3"><div class="icon-circle">💎</div><span class="tier-val lt3">LT3</span></div>
+                <div class="tier-box ht3"><div class="icon-circle">⚔️</div><span class="tier-val ht3">HT3</span></div>
+                <div class="tier-box lt2"><div class="icon-circle">🪓</div><span class="tier-val lt2">LT2</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🔱</div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
 
         <!-- المركز الثالث -->
-        <div class="card rank-3" data-pot="99" data-nethop="99" data-smp="7" data-sword="6" data-axe="7" data-mace="99" data-spearmace="99" data-score="38">
+        <div class="card rank-3" data-pot="99" data-nethop="99" data-smp="4" data-sword="3" data-axe="4" data-mace="99" data-spearmace="99" data-score="38">
             <div class="card-top">
                 <div class="player-main">
                     <span class="rank-num">3.</span>
-                    <img src="https://mc-heads.net/avatar/iraizen/45" class="avatar" alt="skin">
+                    <div class="avatar" style="background: linear-gradient(135deg, #3498db, #2ecc71);">i</div>
                     <div>
                         <div class="name">iraizen</div>
                         <div class="details">Combat Cadet (38 points)</div>
@@ -409,18 +410,18 @@
                 <div class="region">EU</div>
             </div>
             <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2364748b" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2364748b" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box ht4"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%239b59b6" alt="SMP"></div><span class="tier-val ht4">HT4</span></div>
-                <div class="tier-box lt3"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23c0392b" alt="Sword"></div><span class="tier-val lt3">LT3</span></div>
-                <div class="tier-box ht4"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%239b59b6" alt="Axe"></div><span class="tier-val ht4">HT4</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2364748b" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2364748b" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box ht4"><div class="icon-circle">💎</div><span class="tier-val ht4">HT4</span></div>
+                <div class="tier-box lt3"><div class="icon-circle">⚔️</div><span class="tier-val lt3">LT3</span></div>
+                <div class="tier-box ht4"><div class="icon-circle">🪓</div><span class="tier-val ht4">HT4</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">🔱</div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
     </div>
 
-    <!-- نافذة معلومات النقاط والألقاب -->
+    <!-- نافذة معلومات النقاط -->
     <div id="infoModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -436,13 +437,8 @@
             <div class="modal-row"><span>HT5</span><span>نقطتان | LT5: نقطة واحدة</span></div>
 
             <div class="modal-section-title">ألقاب الإنجازات</div>
-            <div class="modal-row"><span>أستاذ فنون القتال</span><span>أكثر من 400 نقطة</span></div>
-            <div class="modal-row"><span>سيد القتال</span><span>أكثر من 250 نقطة</span></div>
-            <div class="modal-row"><span>بطل القتال</span><span>أكثر من 100 نقطة</span></div>
             <div class="modal-row"><span>متخصص قتالي</span><span>50+ نقطة</span></div>
             <div class="modal-row"><span>طالب عسكري قتالي</span><span>20+ نقطة</span></div>
-            <div class="modal-row"><span>مبتدئ في القتال</span><span>1+ نقاط</span></div>
-            <div class="modal-row"><span>مبتدئ</span><span>أقل من 10 نقاط</span></div>
         </div>
     </div>
 
