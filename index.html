@@ -137,6 +137,8 @@
             font-size: 12px;
             font-weight: bold;
         }
+        
+        /* تنسيق شبكة الأيقونات والتيرز تماماً كالـصورة */
         .tiers-grid {
             display: flex;
             gap: 8px;
@@ -147,25 +149,47 @@
         .tier-box {
             background: #191e2c;
             border: 1px solid #252d42;
-            padding: 6px 8px;
-            border-radius: 8px;
+            padding: 8px 6px;
+            border-radius: 10px;
             font-size: 11px;
             text-align: center;
             min-width: 65px;
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            align-items: center;
+            gap: 5px;
         }
-        .tier-box .cat-name {
-            color: #94a3b8;
-            font-size: 10px;
+        
+        /* الأيقونات الدائرية للشكل المطلوب */
+        .icon-circle {
+            width: 28px;
+            height: 28px;
+            background: #12151f;
+            border: 1px solid #2a344d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
         }
-        .tier-box .tier-val {
+        /* تلوين الأيقونة النشطة إذا كان اللاعب مصنفاً فيها */
+        .tier-box.active-tier .icon-circle {
+            border-color: #fbbf24;
+            color: #fbbf24;
+        }
+        .tier-box.active-tier {
+            border-color: #3b2e1a;
+            background: #1c191a;
+        }
+
+        .tier-val {
             color: #fbbf24;
             font-weight: bold;
+            font-size: 11px;
         }
-        .tier-box .tier-val.unranked {
+        .tier-val.unranked {
             color: #64748b;
+            font-size: 10px;
         }
     </style>
 </head>
@@ -205,15 +229,42 @@
             <div class="region">EU</div>
         </div>
         <div class="tiers-grid">
-            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val">HT1</span></div>
-            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box active-tier">
+                <div class="icon-circle">⚔️</div>
+                <span class="tier-val">HT1</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🪓</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🔨</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🗡️</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">💎</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🧪</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🛡️</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🍎</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🔮</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
         </div>
     </div>
 
@@ -231,15 +282,42 @@
             <div class="region">EU</div>
         </div>
         <div class="tiers-grid">
-            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val">HT3</span></div>
-            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val">LT2</span></div>
-            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val">LT3</span></div>
-            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box active-tier">
+                <div class="icon-circle">⚔️</div>
+                <span class="tier-val">HT3</span>
+            </div>
+            <div class="tier-box active-tier">
+                <div class="icon-circle">🪓</div>
+                <span class="tier-val">LT2</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🔨</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🗡️</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box active-tier">
+                <div class="icon-circle">💎</div>
+                <span class="tier-val">LT3</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🧪</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🛡️</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🍎</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🔮</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
         </div>
     </div>
 
@@ -257,19 +335,46 @@
             <div class="region">EU</div>
         </div>
         <div class="tiers-grid">
-            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val">LT3</span></div>
-            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val">HT4</span></div>
-            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val">HT4</span></div>
-            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box active-tier">
+                <div class="icon-circle">⚔️</div>
+                <span class="tier-val">LT3</span>
+            </div>
+            <div class="tier-box active-tier">
+                <div class="icon-circle">🪓</div>
+                <span class="tier-val">HT4</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🔨</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🗡️</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box active-tier">
+                <div class="icon-circle">💎</div>
+                <span class="tier-val">HT4</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🧪</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🛡️</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🍎</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
+            <div class="tier-box">
+                <div class="icon-circle">🔮</div>
+                <span class="tier-val unranked">Unranked</span>
+            </div>
         </div>
     </div>
 
-    <!-- المركز الرابع -->
+    <!-- المراكز من 4 إلى 7 (تأخذ التصميم الداكن الفخم) -->
     <div class="card">
         <div class="card-top">
             <div class="player-main">
@@ -283,19 +388,18 @@
             <div class="region">AS</div>
         </div>
         <div class="tiers-grid">
-            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val">LT4</span></div>
-            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box active-tier"><div class="icon-circle">⚔️</div><span class="tier-val">LT4</span></div>
+            <div class="tier-box"><div class="icon-circle">🪓</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🗡️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">💎</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🛡️️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🍎</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🔮</div><span class="tier-val unranked">Unranked</span></div>
         </div>
     </div>
 
-    <!-- المركز الخامس -->
     <div class="card">
         <div class="card-top">
             <div class="player-main">
@@ -309,19 +413,18 @@
             <div class="region">EU</div>
         </div>
         <div class="tiers-grid">
-            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val">LT4</span></div>
-            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">⚔️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box active-tier"><div class="icon-circle">🪓</div><span class="tier-val">LT4</span></div>
+            <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🗡️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">💎</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🍎</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🔮</div><span class="tier-val unranked">Unranked</span></div>
         </div>
     </div>
 
-    <!-- المركز السادس -->
     <div class="card">
         <div class="card-top">
             <div class="player-main">
@@ -335,19 +438,18 @@
             <div class="region">NA</div>
         </div>
         <div class="tiers-grid">
-            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">⚔️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🪓</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🗡️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">💎</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🍎</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🔮</div><span class="tier-val unranked">Unranked</span></div>
         </div>
     </div>
 
-    <!-- المركز السابع -->
     <div class="card">
         <div class="card-top">
             <div class="player-main">
@@ -361,17 +463,17 @@
             <div class="region">EU</div>
         </div>
         <div class="tiers-grid">
-            <div class="tier-box"><span class="cat-name">Sword</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Axe</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Spear Mace</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Crystal</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">Pot</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">SMP</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">UHC</span><span class="tier-val unranked">Unranked</span></div>
-            <div class="tier-box"><span class="cat-name">NethOP</span><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">⚔️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🪓</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🔨</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🗡️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">💎</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🧪</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🛡️</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🍎</div><span class="tier-val unranked">Unranked</span></div>
+            <div class="tier-box"><div class="icon-circle">🔮</div><span class="tier-val unranked">Unranked</span></div>
         </div>
     </div>
 
 </body>
-    </html>
+</html>
