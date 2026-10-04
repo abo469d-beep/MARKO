@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIKEY TIERS</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: #0f1117;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            min-height: 100vh;
         }
 
         .player-profile-card {
             background-color: #161922;
             border: 1px solid #232733;
-            border-radius: 14px;
-            padding: 20px 25px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-            max-width: 100%;
+            border-radius: 16px;
+            padding: 22px 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            width: fit-content;
         }
 
         .tier-list-bar {
@@ -56,7 +61,6 @@
             width: 24px;
             height: 24px;
             filter: brightness(0.7);
-            transition: filter 0.2s ease;
         }
 
         .tier-text {
@@ -66,6 +70,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* تنسيق العنصر النشط (HT1) */
         .tier-item.active .icon-circle {
             border-color: #f59e0b;
             background-color: #262a3b;
@@ -85,6 +90,7 @@
 
     <div class="player-profile-card">
         <div class="tier-list-bar">
+            
             <!-- SMP -->
             <div class="tier-item">
                 <div class="icon-circle">
@@ -125,7 +131,7 @@
                 <span class="tier-text">غير مصنف</span>
             </div>
 
-            <!-- Sword (Active / HT1) -->
+            <!-- Sword (HT1 Active) -->
             <div class="tier-item active">
                 <div class="icon-circle">
                     <img src="sword_2.svg" alt="Sword">
@@ -156,6 +162,7 @@
                 </div>
                 <span class="tier-text">غير مصنف</span>
             </div>
+
         </div>
     </div>
 
