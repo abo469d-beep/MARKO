@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIKEY TIERS</title>
+    <title>MIKEY TIERS - Leaderboard</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,69 +12,159 @@
         }
 
         body {
-            background-color: #0f1117;
+            background-color: #0b0d13;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            padding: 20px;
             display: flex;
             justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* تصميم بطاقة اللاعب */
+        .player-card {
+            background-color: #141721;
+            border: 1px solid #1f2433;
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .player-header {
+            display: flex;
             align-items: center;
-            min-height: 100vh;
+            justify-content: space-between;
         }
 
-        .player-profile-card {
-            background-color: #161922;
-            border: 1px solid #232733;
-            border-radius: 16px;
-            padding: 22px 28px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-            width: fit-content;
+        .player-info-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
+        /* شارة الترتيب (مثل 1, 2, 3) */
+        .rank-badge {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+        }
+
+        .rank-badge.silver {
+            background: linear-gradient(135deg, #64748b, #475569);
+            box-shadow: 0 2px 8px rgba(100, 116, 139, 0.4);
+        }
+
+        /* صورة أو سكن اللاعب */
+        .player-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background-color: #222738;
+            object-fit: cover;
+        }
+
+        .player-details {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .player-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .player-sub {
+            font-size: 12px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .player-sub span.points {
+            color: #cbd5e1;
+        }
+
+        /* شارة الاتحاد أو المنطقة على اليمين */
+        .region-badge {
+            background-color: #064e3b;
+            color: #34d399;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: 1px solid #065f46;
+        }
+
+        /* شريط التقييمات والأيقونات الأفقي */
         .tier-list-bar {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             overflow-x: auto;
             padding: 5px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #2b3044 transparent;
         }
 
         .tier-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
-            min-width: 55px;
+            gap: 6px;
+            min-width: 50px;
         }
 
         .icon-circle {
-            width: 48px;
-            height: 48px;
-            background-color: #212533;
+            width: 40px;
+            height: 40px;
+            background-color: #1b2030;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s ease;
             border: 2px solid transparent;
+            transition: 0.2s;
         }
 
         .icon-circle img {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             filter: brightness(0.7);
         }
 
         .tier-text {
-            font-size: 11px;
-            color: #6b7280;
+            font-size: 10px;
+            color: #64748b;
             font-weight: 600;
-            letter-spacing: 0.5px;
         }
 
-        /* تنسيق العنصر النشط (HT1) */
+        /* العنصر النشط (المحدد بإطار أصفر) */
         .tier-item.active .icon-circle {
             border-color: #f59e0b;
-            background-color: #262a3b;
-            box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+            background-color: #242a3d;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
         }
 
         .tier-item.active .icon-circle img {
@@ -88,82 +178,64 @@
 </head>
 <body>
 
-    <div class="player-profile-card">
-        <div class="tier-list-bar">
-            
-            <!-- SMP -->
-            <div class="tier-item">
-                <div class="icon-circle">
-                    <img src="smp_2.svg" alt="SMP">
+    <div class="container">
+
+        <!-- اللاعب الأول (مثال: iRuby_X) -->
+        <div class="player-card">
+            <div class="player-header">
+                <div class="player-info-group">
+                    <div class="rank-badge">1</div>
+                    <img src="skin1.png" alt="Skin" class="player-avatar" onerror="this.src='https://via.placeholder.com/42'">
+                    <div class="player-details">
+                        <span class="player-name">iRuby_X</span>
+                        <span class="player-sub">💎 <span class="points">(60 نقطة)</span> متخصص قتالي</span>
+                    </div>
                 </div>
-                <span class="tier-text">غير مصنف</span>
+                <div class="region-badge">الاتحاد الأوروبي</div>
             </div>
 
-            <!-- UHC -->
-            <div class="tier-item">
-                <div class="icon-circle">
-                    <img src="uhc.svg" alt="UHC">
-                </div>
-                <span class="tier-text">غير مصنف</span>
+            <!-- شريط الأيقونات والتقييمات -->
+            <div class="tier-list-bar">
+                <div class="tier-item"><div class="icon-circle"><img src="smp_2.svg" alt="SMP"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="uhc.svg" alt="UHC"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="pot (1).svg" alt="Pot"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="nethop.svg" alt="NethOP"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="vanilla_2.svg" alt="Vanilla"></div><span class="tier-text">غير مصنف</span></div>
+                <!-- النشط -->
+                <div class="tier-item active"><div class="icon-circle"><img src="sword_2.svg" alt="Sword"></div><span class="tier-text">HT1</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="axe_2.svg" alt="Axe"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="mace_2.svg" alt="Mace"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="spearmace_2.svg" alt="Spear Mace"></div><span class="tier-text">غير مصنف</span></div>
             </div>
-
-            <!-- Pot -->
-            <div class="tier-item">
-                <div class="icon-circle">
-                    <img src="pot (1).svg" alt="Pot">
-                </div>
-                <span class="tier-text">غير مصنف</span>
-            </div>
-
-            <!-- NethOP -->
-            <div class="tier-item">
-                <div class="icon-circle">
-                    <img src="nethop.svg" alt="NethOP">
-                </div>
-                <span class="tier-text">غير مصنف</span>
-            </div>
-
-            <!-- Vanilla -->
-            <div class="tier-item">
-                <div class="icon-circle">
-                    <img src="vanilla_2.svg" alt="Vanilla">
-                </div>
-                <span class="tier-text">غير مصنف</span>
-            </div>
-
-            <!-- Sword (HT1 Active) -->
-            <div class="tier-item active">
-                <div class="icon-circle">
-                    <img src="sword_2.svg" alt="Sword">
-                </div>
-                <span class="tier-text">HT1</span>
-            </div>
-
-            <!-- Axe -->
-            <div class="tier-item">
-                <div class="icon-circle">
-                    <img src="axe_2.svg" alt="Axe">
-                </div>
-                <span class="tier-text">غير مصنف</span>
-            </div>
-
-            <!-- Mace -->
-            <div class="tier-item">
-                <div class="icon-circle">
-                    <img src="mace_2.svg" alt="Mace">
-                </div>
-                <span class="tier-text">غير مصنف</span>
-            </div>
-
-            <!-- Spear Mace -->
-            <div class="tier-item">
-                <div class="icon-circle">
-                    <img src="spearmace_2.svg" alt="Spear Mace">
-                </div>
-                <span class="tier-text">غير مصنف</span>
-            </div>
-
         </div>
+
+        <!-- اللاعب الثاني (مثال: Mustfa_105) -->
+        <div class="player-card">
+            <div class="player-header">
+                <div class="player-info-group">
+                    <div class="rank-badge silver">2</div>
+                    <img src="skin2.png" alt="Skin" class="player-avatar" onerror="this.src='https://via.placeholder.com/42'">
+                    <div class="player-details">
+                        <span class="player-name">Mustfa_105</span>
+                        <span class="player-sub">💎 <span class="points">(42 نقطة)</span> طالب عسكري قتالي</span>
+                    </div>
+                </div>
+                <div class="region-badge">الاتحاد الأوروبي</div>
+            </div>
+
+            <div class="tier-list-bar">
+                <div class="tier-item"><div class="icon-circle"><img src="smp_2.svg" alt="SMP"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="uhc.svg" alt="UHC"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="pot (1).svg" alt="Pot"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="nethop.svg" alt="NethOP"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="vanilla_2.svg" alt="Vanilla"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="sword_2.svg" alt="Sword"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item"><div class="icon-circle"><img src="axe_2.svg" alt="Axe"></div><span class="tier-text">غير مصنف</span></div>
+                <div class="tier-item active"><div class="icon-circle"><img src="mace_2.svg" alt="Mace"></div><span class="tier-text">LT2</span></div>
+                <div class="tier-item active"><div class="icon-circle"><img src="spearmace_2.svg" alt="Spear Mace"></div><span class="tier-text">HT3</span></div>
+            </div>
+        </div>
+
     </div>
 
 </body>
