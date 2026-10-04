@@ -28,7 +28,7 @@
             gap: 15px;
         }
 
-        /* الهيدر العلوي */
+        /* الهيدر العلوي الأصلي */
         .top-header {
             display: flex;
             justify-content: space-between;
@@ -56,7 +56,7 @@
             gap: 6px;
         }
 
-        /* شريط معلومات الديسكورد الفرعي */
+        /* شريط معلومات الديسكورد الفرعي الأصلي */
         .discord-banner {
             background-color: #141721;
             border: 1px solid #1f2433;
@@ -99,12 +99,13 @@
             cursor: pointer;
         }
 
-        /* أزرار التصفية العلوية (إجمالي، وعاء، إلخ...) */
+        /* أزرار التصفية العلوية الأصلية */
         .filter-bar {
             display: flex;
             gap: 8px;
             overflow-x: auto;
             padding: 5px 0;
+            flex-direction: row-reverse;
         }
 
         .filter-chip {
@@ -125,7 +126,7 @@
             font-weight: bold;
         }
 
-        /* بطاقات اللاعبين */
+        /* بطاقات اللاعبين الأصلية */
         .player-card {
             background-color: #141721;
             border: 1px solid #23293d;
@@ -169,11 +170,13 @@
             font-size: 15px;
             font-weight: bold;
             color: #ffffff;
+            text-align: right;
         }
 
         .player-role {
             font-size: 11px;
             color: #94a3b8;
+            text-align: right;
         }
 
         .region-tag {
@@ -185,7 +188,7 @@
             border-radius: 6px;
         }
 
-        /* شريط الأيقونات داخل البطاقة */
+        /* شريط الأيقونات والدوائر الجديد والمطابق للترتيب المطلوب */
         .tier-icons-row {
             display: flex;
             justify-content: space-between;
@@ -227,7 +230,7 @@
             font-weight: 600;
         }
 
-        /* حالات التميز للأيقونات (HT1, LT3, إلخ) */
+        /* حالات الألوان للدوائر حسب الرتب */
         .tier-slot.active-yellow .slot-icon {
             border-color: #f59e0b;
             background-color: #2a2518;
@@ -256,18 +259,18 @@
         
         <!-- الهيدر العلوي -->
         <div class="top-header">
-            <div class="site-title">مستويات مايكي</div>
             <button class="discord-btn">الانضمام إلى خادم الديسكورد 🎮</button>
+            <div class="site-title">مستويات مايكي</div>
         </div>
 
         <!-- بار الديسكورد الفرعي -->
         <div class="discord-banner">
-            <button class="info-btn">معلومات</button>
+            <button class="join-small-btn">ينضم</button>
             <div class="discord-banner-text" style="text-align: right;">
                 تجرى الاختبارات على
                 <span>خادم ديسكورد Mikey Tiers</span>
             </div>
-            <button class="join-small-btn">ينضم</button>
+            <button class="info-btn">معلومات</button>
         </div>
 
         <!-- أزرار التصفية -->
@@ -284,78 +287,81 @@
         <!-- اللاعب الأول: iRuby_X -->
         <div class="player-card">
             <div class="player-header">
-                <div class="region-tag">الاتحاد الأوروبي</div>
                 <div class="player-info">
-                    <div class="player-details" style="text-align: right;">
+                    <div class="rank-num">.1</div>
+                    <div class="player-avatar"></div>
+                    <div class="player-details">
                         <span class="player-name">iRuby_X</span>
-                        <span class="player-role">أخصائي قتالي (60 نقطة) 💎</span>
+                        <span class="player-role">💎 أخصائي قتالي (60 نقطة)</span>
                     </div>
-                    <img src="skin1.png" alt="" class="player-avatar" onerror="this.src='https://via.placeholder.com/38'">
-                    <div class="rank-num">1.</div>
                 </div>
+                <div class="region-tag">الاتحاد الأوروبي</div>
             </div>
 
+            <!-- الدوائر والأيقونات الخاصة باللاعب الأول (مطابقة للصورة) -->
             <div class="tier-icons-row">
-                <div class="tier-slot"><div class="slot-icon"><img src="pot (1).svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="vanilla_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="nethop.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="smp_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot active-yellow"><div class="slot-icon"><img src="sword_2.svg" alt=""></div><span class="slot-text">HT1</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="axe_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="mace_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="spearmace_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot active-yellow"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">HT1</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
             </div>
         </div>
 
         <!-- اللاعب الثاني: Mustfa_105 -->
         <div class="player-card">
             <div class="player-header">
-                <div class="region-tag">الاتحاد الأوروبي</div>
                 <div class="player-info">
-                    <div class="player-details" style="text-align: right;">
+                    <div class="rank-num">.2</div>
+                    <div class="player-avatar"></div>
+                    <div class="player-details">
                         <span class="player-name">Mustfa_105</span>
-                        <span class="player-role">طالب عسكري (42 نقطة) 💎</span>
+                        <span class="player-role">💎 طالب عسكري (42 نقطة)</span>
                     </div>
-                    <img src="skin2.png" alt="" class="player-avatar" onerror="this.src='https://via.placeholder.com/38'">
-                    <div class="rank-num">2.</div>
                 </div>
+                <div class="region-tag">الاتحاد الأوروبي</div>
             </div>
 
+            <!-- الدوائر والأيقونات الخاصة باللاعب الثاني (مطابقة للصورة) -->
             <div class="tier-icons-row">
-                <div class="tier-slot"><div class="slot-icon"><img src="pot (1).svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="vanilla_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot active-purple"><div class="slot-icon"><img src="nethop.svg" alt=""></div><span class="slot-text">LT3</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="smp_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot active-orange"><div class="slot-icon"><img src="sword_2.svg" alt=""></div><span class="slot-text">HT3</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="axe_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot active-orange"><div class="slot-icon"><img src="mace_2.svg" alt=""></div><span class="slot-text">LT2</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="spearmace_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot active-orange"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">LT2</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot active-orange"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">HT3</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot active-purple"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">LT3</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
             </div>
         </div>
 
         <!-- اللاعب الثالث: إرايزن -->
         <div class="player-card">
             <div class="player-header">
-                <div class="region-tag">الاتحاد الأوروبي</div>
                 <div class="player-info">
-                    <div class="player-details" style="text-align: right;">
+                    <div class="rank-num">.3</div>
+                    <div class="player-avatar"></div>
+                    <div class="player-details">
                         <span class="player-name">إرايزن</span>
-                        <span class="player-role">طالب عسكري (38 نقطة) 💎</span>
+                        <span class="player-role">💎 طالب عسكري (38 نقطة)</span>
                     </div>
-                    <img src="skin3.png" alt="" class="player-avatar" onerror="this.src='https://via.placeholder.com/38'">
-                    <div class="rank-num">3.</div>
                 </div>
+                <div class="region-tag">الاتحاد الأوروبي</div>
             </div>
 
+            <!-- الدوائر والأيقونات الخاصة باللاعب الثالث (مطابقة للصورة) -->
             <div class="tier-icons-row">
-                <div class="tier-slot"><div class="slot-icon"><img src="pot (1).svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="vanilla_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot active-purple"><div class="slot-icon"><img src="nethop.svg" alt=""></div><span class="slot-text">HT4</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="smp_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot active-orange"><div class="slot-icon"><img src="sword_2.svg" alt=""></div><span class="slot-text">LT3</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="axe_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
-                <div class="tier-slot active-purple"><div class="slot-icon"><img src="mace_2.svg" alt=""></div><span class="slot-text">HT4</span></div>
-                <div class="tier-slot"><div class="slot-icon"><img src="spearmace_2.svg" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot active-purple"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">HT4</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot active-orange"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">LT3</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot active-purple"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">HT4</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
+                <div class="tier-slot"><div class="slot-icon"><img src="" alt=""></div><span class="slot-text">غير مصنف</span></div>
             </div>
         </div>
 
