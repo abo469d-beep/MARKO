@@ -16,15 +16,23 @@
             color: #ffffff;
             padding: 10px;
         }
+        /* الهيدر العلوي مثل mctiers */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #12151f;
-            padding: 15px;
+            padding: 12px 15px;
             border-radius: 12px;
             margin-bottom: 12px;
             border: 1px solid #1c2130;
+        }
+        .logo-search-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            max-width: 500px;
         }
         .logo {
             font-size: 20px;
@@ -32,96 +40,52 @@
             color: #ff3366;
             letter-spacing: 1px;
         }
-        .discord-btn {
-            background-color: #5865F2;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* خانة البحث */
-        .search-container {
-            margin-bottom: 15px;
+        .search-box {
+            position: relative;
+            flex: 1;
         }
         .search-input {
             width: 100%;
-            background: #12151f;
-            border: 1px solid #1c2130;
-            padding: 12px 15px;
-            border-radius: 12px;
+            background: #191e2c;
+            border: 1px solid #252d42;
+            padding: 8px 12px 8px 35px;
+            border-radius: 8px;
             color: #ffffff;
-            font-size: 14px;
+            font-size: 13px;
             outline: none;
-            transition: 0.2s;
         }
         .search-input:focus {
             border-color: #ff3366;
         }
-        .search-input::placeholder {
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
             color: #64748b;
+            font-size: 14px;
         }
-        
-        .info-card {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #12151f;
-            padding: 12px 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #1c2130;
-        }
-        .info-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .info-icon-btn {
-            background: #191e2c;
-            border: 1px solid #252d42;
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 13px;
-            color: #ffffff;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .info-icon-btn:hover {
-            border-color: #ff3366;
-        }
-        .info-text {
-            font-size: 13px;
+        .menu-icon {
+            font-size: 20px;
             color: #94a3b8;
-        }
-        .info-text span {
-            color: #ffffff;
-            font-weight: bold;
+            cursor: pointer;
         }
 
-        /* الكاتات الأفقية */
+        /* شريط الفرز العلوي */
         .categories {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             overflow-x: auto;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
         }
         .category-item {
-            background: #161a26;
-            padding: 10px 14px;
-            border-radius: 12px;
+            background: #12151f;
+            padding: 10px 16px;
+            border-radius: 10px;
             white-space: nowrap;
             font-size: 13px;
-            border: 1px solid #22283d;
+            border: 1px solid #1c2130;
             cursor: pointer;
             color: #94a3b8;
             display: flex;
@@ -129,126 +93,197 @@
             align-items: center;
             gap: 4px;
             transition: 0.2s;
-            text-align: center;
-            min-width: 80px;
         }
         .category-item.active {
-            background: #251622;
+            background: #191e2c;
             border-color: #ff3366;
             color: #ff3366;
         }
-        
+
+        /* شريط المعلومات وسيرفر الديسكورد والـ IP */
+        .info-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            align-items: center;
+            overflow-x: auto;
+        }
+        .info-btn-box {
+            background: #12151f;
+            border: 1px solid #1c2130;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 13px;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        .server-ip-box {
+            background: #12151f;
+            border: 1px solid #1c2130;
+            padding: 6px 12px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            justify-content: space-between;
+        }
+        .ip-content {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        .ip-content span {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .discord-icon-btn {
+            background: #5865F2;
+            color: white;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* بطاقات اللاعبين */
         .card {
             background: #12151f;
             border-radius: 12px;
-            padding: 14px;
+            padding: 12px 15px;
             margin-bottom: 12px;
             border: 1px solid #1c2130;
         }
-        .card.rank-1 {
-            background: linear-gradient(135deg, rgba(241, 196, 15, 0.15) 0%, #12151f 55%);
-            border-color: #f1c40f;
-        }
-        .card.rank-2 {
-            background: linear-gradient(135deg, rgba(164, 176, 190, 0.15) 0%, #12151f 55%);
-            border-color: #a4b0be;
-        }
-        .card.rank-3 {
-            background: linear-gradient(135deg, rgba(230, 126, 34, 0.15) 0%, #12151f 55%);
-            border-color: #e67e22;
-        }
+        .card.rank-1 { border-left: 4px solid #f1c40f; }
+        .card.rank-2 { border-left: 4px solid #a4b0be; }
+        .card.rank-3 { border-left: 4px solid #e67e22; }
 
         .card-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-        .player-main {
+        .player-info-left {
             display: flex;
             align-items: center;
             gap: 12px;
         }
         .rank-num {
             font-weight: bold;
-            font-size: 18px;
-            color: #ffffff;
-        }
-        .avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 8px;
-            background: #1c2130;
-            object-fit: cover;
-        }
-        .name {
-            font-weight: bold;
             font-size: 16px;
             color: #ffffff;
         }
-        .details {
-            font-size: 12px;
-            color: #cbd5e1;
-            margin-top: 2px;
+        .avatar-container {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background: #1c2130;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .name-and-title {
+            display: flex;
+            flex-direction: column;
+        }
+        .name {
+            font-weight: bold;
+            font-size: 15px;
+            color: #ffffff;
+        }
+        .sub-title {
+            font-size: 11px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
         .region {
             background: #064e3b;
             color: #34d399;
-            padding: 4px 10px;
+            padding: 3px 8px;
             border-radius: 6px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
         }
-        
+        .region.na {
+            background: #7f1d1d;
+            color: #f87171;
+        }
+
+        /* قسم التيرات */
+        .tiers-section-title {
+            font-size: 10px;
+            color: #64748b;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
         .tiers-grid {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             overflow-x: auto;
-            padding-top: 8px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 4px;
         }
         .tier-box {
             background: #191e2c;
             border: 1px solid #252d42;
-            padding: 8px 6px;
-            border-radius: 10px;
-            font-size: 11px;
+            padding: 6px 4px;
+            border-radius: 8px;
+            font-size: 10px;
             text-align: center;
-            min-width: 65px;
+            min-width: 55px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 3px;
         }
         .icon-circle {
-            width: 32px;
-            height: 32px;
+            width: 26px;
+            height: 26px;
             background: #12151f;
             border: 1px solid #2a344d;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            font-size: 11px;
+            font-size: 10px;
             color: #94a3b8;
             font-weight: bold;
         }
         
-        .tier-box.unranked {
-            border-color: #252d42;
-            background: #191e2c;
-        }
-        .tier-val.unranked {
-            color: #64748b;
-            font-size: 10px;
-        }
+        .tier-box.unranked { border-color: #252d42; background: #191e2c; }
+        .tier-val.unranked { color: #64748b; font-size: 9px; }
 
         .tier-box.ht1 { border-color: #f1c40f; background: #2c2514; }
         .tier-val.ht1 { color: #f1c40f; font-weight: bold; }
 
-        .tier-box.lt3 { border-color: #c0392b; background: #251212; }
-        .tier-val.lt3 { color: #c0392b; font-weight: bold; }
+        .tier-box.lt1 { border-color: #f39c12; background: #2c1f10; }
+        .tier-val.lt1 { color: #f39c12; font-weight: bold; }
+
+        .tier-box.lt2 { border-color: #d35400; background: #2c1811; }
+        .tier-val.lt2 { color: #d35400; font-weight: bold; }
+
+        .tier-box.ht3 { border-color: #e74c3c; background: #2c1515; }
+        .tier-val.ht3 { color: #e74c3c; font-weight: bold; }
 
         .tier-box.ht4 { border-color: #9b59b6; background: #201325; }
         .tier-val.ht4 { color: #9b59b6; font-weight: bold; }
@@ -274,8 +309,6 @@
             width: 100%;
             max-width: 450px;
             padding: 20px;
-            max-height: 90vh;
-            overflow-y: auto;
         }
         .modal-header {
             display: flex;
@@ -285,23 +318,8 @@
             border-bottom: 1px solid #1c2130;
             padding-bottom: 10px;
         }
-        .modal-header h3 {
-            color: #ffffff;
-            font-size: 16px;
-        }
-        .close-btn {
-            background: none;
-            border: none;
-            color: #94a3b8;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        .modal-section-title {
-            color: #ff3366;
-            font-size: 14px;
-            font-weight: bold;
-            margin: 15px 0 8px 0;
-        }
+        .modal-header h3 { color: #ffffff; font-size: 15px; }
+        .close-btn { background: none; border: none; color: #94a3b8; font-size: 18px; cursor: pointer; }
         .modal-row {
             display: flex;
             justify-content: space-between;
@@ -316,121 +334,111 @@
 </head>
 <body>
 
+    <!-- الهيدر العلوي -->
     <header>
-        <div class="logo">MIKEY TIERS</div>
-        <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-btn">
-            <span>Join Discord</span>
-        </a>
-    </header>
-
-    <!-- خانة البحث عن اللاعب -->
-    <div class="search-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search player..." onkeyup="searchPlayer()">
-    </div>
-
-    <!-- الأزرار العلوية للفرز بالإنجليزية -->
-    <div class="categories">
-        <div class="category-item active" onclick="filterCategory('overall', this)">Overall</div>
-        <div class="category-item" onclick="filterCategory('crystal', this)">Crystal</div>
-        <div class="category-item" onclick="filterCategory('anchor', this)">Anchor</div>
-        <div class="category-item" onclick="filterCategory('pot', this)">Pot</div>
-        <div class="category-item" onclick="filterCategory('nethop', this)">NethOp</div>
-        <div class="category-item" onclick="filterCategory('smp', this)">SMP</div>
-        <div class="category-item" onclick="filterCategory('sword', this)">Sword</div>
-        <div class="category-item" onclick="filterCategory('axe', this)">Axe</div>
-        <div class="category-item" onclick="filterCategory('mace', this)">Mace</div>
-        <div class="category-item" onclick="filterCategory('spearmace', this)">Spear Mace</div>
-    </div>
-
-    <div class="info-card">
-        <div class="info-left">
-            <button class="info-icon-btn" onclick="openModal()">Info</button>
-            <div class="info-text">
-                Tests are held on Discord<br>
-                <span>Mikey Tiers Server</span>
+        <div class="logo-search-area">
+            <div class="logo">MIKEY TIERS</div>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search player..." onkeyup="searchPlayer()">
             </div>
         </div>
-        <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-btn">
-            <span>Join</span>
-        </a>
+        <div class="menu-icon">☰</div>
+    </header>
+
+    <!-- الفرز العلوي -->
+    <div class="categories">
+        <div class="category-item active" onclick="filterCategory('overall', this)">⭐ Overall</div>
+        <div class="category-item" onclick="filterCategory('crystal', this)">💎 Crystal</div>
+        <div class="category-item" onclick="filterCategory('vanilla', this)">🛡️ Vanilla</div>
+        <div class="category-item" onclick="filterCategory('uhc', this)">❤️️ UHC</div>
+        <div class="category-item" onclick="filterCategory('smp', this)">⚔️ SMP</div>
+    </div>
+
+    <!-- شريط المعلومات والديسكورد -->
+    <div class="info-bar">
+        <button class="info-btn-box" onclick="openModal()">ℹ️ Information</button>
+        <div class="server-ip-box">
+            <div class="ip-content">
+                <span>🛡️ SERVER IP:</span> <span>mikey.club</span>
+            </div>
+            <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-icon-btn">💬</a>
+        </div>
     </div>
 
     <div id="players-container">
         <!-- المركز الأول -->
-        <div class="card rank-1" data-name="iruby_x" data-crystal="99" data-anchor="99" data-pot="99" data-nethop="99" data-smp="99" data-sword="1" data-axe="99" data-mace="99" data-spearmace="99" data-score="60">
+        <div class="card rank-1" data-name="iruby_x" data-crystal="1" data-vanilla="1" data-uhc="1" data-smp="1" data-score="60">
             <div class="card-top">
-                <div class="player-main">
+                <div class="player-info-left">
                     <span class="rank-num">1.</span>
-                    <img src="https://mc-heads.net/avatar/iRuby_X/45" class="avatar" alt="skin">
-                    <div>
+                    <div class="avatar-container">
+                        <img src="https://mc-heads.net/avatar/iRuby_X/40" class="avatar" alt="skin">
+                    </div>
+                    <div class="name-and-title">
                         <div class="name">iRuby_X</div>
-                        <div class="details">Combat Specialist (60 points)</div>
+                        <div class="sub-title">⚔️ Combat Specialist (60 pts)</div>
                     </div>
                 </div>
-                <div class="region">EU</div>
+                <div class="region na">NA</div>
             </div>
+            <div class="tiers-section-title">Tiers</div>
             <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle">C</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">A</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">P</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">N</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">S</div><span class="tier-val unranked">Unranked</span></div>
                 <div class="tier-box ht1"><div class="icon-circle">SW</div><span class="tier-val ht1">HT1</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">AX</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">M</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">SM</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box ht1"><div class="icon-circle">AX</div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box ht1"><div class="icon-circle">C</div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box ht1"><div class="icon-circle">P</div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box ht1"><div class="icon-circle">N</div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box lt1"><div class="icon-circle">S</div><span class="tier-val lt1">LT1</span></div>
             </div>
         </div>
 
         <!-- المركز الثاني -->
-        <div class="card rank-2" data-name="mustfa_105" data-crystal="99" data-anchor="99" data-pot="99" data-nethop="99" data-smp="8" data-sword="5" data-axe="4" data-mace="99" data-spearmace="99" data-score="42">
+        <div class="card rank-2" data-name="mustfa_105" data-crystal="3" data-vanilla="1" data-uhc="2" data-smp="2" data-score="42">
             <div class="card-top">
-                <div class="player-main">
+                <div class="player-info-left">
                     <span class="rank-num">2.</span>
-                    <img src="https://mc-heads.net/avatar/Mustfa_105/45" class="avatar" alt="skin">
-                    <div>
+                    <div class="avatar-container">
+                        <img src="https://mc-heads.net/avatar/Mustfa_105/40" class="avatar" alt="skin">
+                    </div>
+                    <div class="name-and-title">
                         <div class="name">Mustfa_105</div>
-                        <div class="details">Combat Specialist (42 points)</div>
+                        <div class="sub-title">⚔️ Combat Master (42 pts)</div>
                     </div>
                 </div>
-                <div class="region">EU</div>
+                <div class="region na">NA</div>
             </div>
+            <div class="tiers-section-title">Tiers</div>
             <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle">C</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">A</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">P</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">N</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box lt3"><div class="icon-circle">S</div><span class="tier-val lt3">LT3</span></div>
                 <div class="tier-box ht3"><div class="icon-circle">SW</div><span class="tier-val ht3">HT3</span></div>
-                <div class="tier-box lt2"><div class="icon-circle">AX</div><span class="tier-val lt2">LT2</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">M</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">SM</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box ht1"><div class="icon-circle">C</div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box ht1"><div class="icon-circle">AX</div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box lt2"><div class="icon-circle">P</div><span class="tier-val lt2">LT2</span></div>
+                <div class="tier-box lt2"><div class="icon-circle">M</div><span class="tier-val lt2">LT2</span></div>
             </div>
         </div>
 
         <!-- المركز الثالث -->
-        <div class="card rank-3" data-name="iraizen" data-crystal="99" data-anchor="99" data-pot="99" data-nethop="99" data-smp="7" data-sword="6" data-axe="7" data-mace="99" data-spearmace="99" data-score="38">
+        <div class="card rank-3" data-name="iraizen" data-crystal="2" data-vanilla="1" data-uhc="1" data-smp="3" data-score="38">
             <div class="card-top">
-                <div class="player-main">
+                <div class="player-info-left">
                     <span class="rank-num">3.</span>
-                    <img src="https://mc-heads.net/avatar/iraizen/45" class="avatar" alt="skin">
-                    <div>
+                    <div class="avatar-container">
+                        <img src="https://mc-heads.net/avatar/iraizen/40" class="avatar" alt="skin">
+                    </div>
+                    <div class="name-and-title">
                         <div class="name">iraizen</div>
-                        <div class="details">Combat Cadet (38 points)</div>
+                        <div class="sub-title">⚔️ Combat Master (38 pts)</div>
                     </div>
                 </div>
                 <div class="region">EU</div>
             </div>
+            <div class="tiers-section-title">Tiers</div>
             <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle">C</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">A</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">P</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">N</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box ht4"><div class="icon-circle">S</div><span class="tier-val ht4">HT4</span></div>
-                <div class="tier-box lt3"><div class="icon-circle">SW</div><span class="tier-val lt3">LT3</span></div>
-                <div class="tier-box ht4"><div class="icon-circle">AX</div><span class="tier-val ht4">HT4</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">M</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">SM</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box lt3"><div class="icon-circle">P</div><span class="tier-val lt3">LT3</span></div>
+                <div class="tier-box ht1"><div class="icon-circle">C</div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box lt1"><div class="icon-circle">SW</div><span class="tier-val lt1">LT1</span></div>
+                <div class="tier-box lt2"><div class="icon-circle">AX</div><span class="tier-val lt2">LT2</span></div>
             </div>
         </div>
     </div>
@@ -439,16 +447,13 @@
     <div id="infoModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Points & Ranks Info</h3>
+                <h3>Points System</h3>
                 <button class="close-btn" onclick="closeModal()">×</button>
             </div>
-            
-            <div class="modal-section-title">Points Calculation</div>
             <div class="modal-row"><span>HT1</span><span>60 pts | LT1: 45 pts</span></div>
             <div class="modal-row"><span>HT2</span><span>30 pts | LT2: 20 pts</span></div>
             <div class="modal-row"><span>HT3</span><span>10 pts | LT3: 6 pts</span></div>
             <div class="modal-row"><span>HT4</span><span>4 pts | LT4: 3 pts</span></div>
-            <div class="modal-row"><span>HT5</span><span>2 pts | LT5: 1 pt</span></div>
         </div>
     </div>
 
@@ -463,7 +468,6 @@
         function searchPlayer() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('card');
-            
             for (let i = 0; i < cards.length; i++) {
                 let name = cards[i].getAttribute('data-name');
                 if (name.includes(input)) {
