@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +31,6 @@
             font-weight: bold;
             color: #ff3366;
             letter-spacing: 1px;
-            direction: ltr;
         }
         .discord-btn {
             background-color: #5865F2;
@@ -108,14 +107,13 @@
             font-weight: bold;
         }
 
-        /* الكاتات الأفقية بدون صور */
+        /* الكاتات الأفقية */
         .categories {
             display: flex;
             gap: 10px;
             overflow-x: auto;
             padding-bottom: 10px;
             margin-bottom: 15px;
-            direction: rtl;
         }
         .category-item {
             background: #161a26;
@@ -321,39 +319,39 @@
     <header>
         <div class="logo">MIKEY TIERS</div>
         <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-btn">
-            <span>انضم إلى خادم الاختبار</span>
+            <span>Join Discord</span>
         </a>
     </header>
 
-    <!-- خانة البحث عن اسم اللاعب -->
+    <!-- خانة البحث عن اللاعب -->
     <div class="search-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="...ابحث عن المشغل" onkeyup="searchPlayer()">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search player..." onkeyup="searchPlayer()">
     </div>
 
-    <!-- الأزرار العلوية للفرز (بدون صور) -->
+    <!-- الأزرار العلوية للفرز بالإنجليزية -->
     <div class="categories">
-        <div class="category-item active" onclick="filterCategory('overall', this)">إجمالي</div>
-        <div class="category-item" onclick="filterCategory('crystal', this)">فانيليا</div>
-        <div class="category-item" onclick="filterCategory('anchor', this)">التغطية الصحية الشاملة</div>
-        <div class="category-item" onclick="filterCategory('pot', this)">وعاء</div>
-        <div class="category-item" onclick="filterCategory('nethop', this)">نيثروب</div>
+        <div class="category-item active" onclick="filterCategory('overall', this)">Overall</div>
+        <div class="category-item" onclick="filterCategory('crystal', this)">Crystal</div>
+        <div class="category-item" onclick="filterCategory('anchor', this)">Anchor</div>
+        <div class="category-item" onclick="filterCategory('pot', this)">Pot</div>
+        <div class="category-item" onclick="filterCategory('nethop', this)">NethOp</div>
         <div class="category-item" onclick="filterCategory('smp', this)">SMP</div>
-        <div class="category-item" onclick="filterCategory('sword', this)">سيف</div>
-        <div class="category-item" onclick="filterCategory('axe', this)">فأس</div>
-        <div class="category-item" onclick="filterCategory('mace', this)">مصول</div>
-        <div class="category-item" onclick="filterCategory('spearmace', this)">رمح مصول</div>
+        <div class="category-item" onclick="filterCategory('sword', this)">Sword</div>
+        <div class="category-item" onclick="filterCategory('axe', this)">Axe</div>
+        <div class="category-item" onclick="filterCategory('mace', this)">Mace</div>
+        <div class="category-item" onclick="filterCategory('spearmace', this)">Spear Mace</div>
     </div>
 
     <div class="info-card">
         <div class="info-left">
-            <button class="info-icon-btn" onclick="openModal()">معلومة</button>
+            <button class="info-icon-btn" onclick="openModal()">Info</button>
             <div class="info-text">
-                تجرى الاختبارات على ديسكورد<br>
-                <span>خادم روبي تيرز</span>
+                Tests are held on Discord<br>
+                <span>Mikey Tiers Server</span>
             </div>
         </div>
         <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-btn">
-            <span>ينضم</span>
+            <span>Join</span>
         </a>
     </div>
 
@@ -366,21 +364,21 @@
                     <img src="https://mc-heads.net/avatar/iRuby_X/45" class="avatar" alt="skin">
                     <div>
                         <div class="name">iRuby_X</div>
-                        <div class="details">(60 نقطة) متخصص قتالي</div>
+                        <div class="details">Combat Specialist (60 points)</div>
                     </div>
                 </div>
-                <div class="region">الاتحاد الأوروبي</div>
+                <div class="region">EU</div>
             </div>
             <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle">ف</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ت</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">و</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ن</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">C</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">A</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">P</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">N</div><span class="tier-val unranked">Unranked</span></div>
                 <div class="tier-box unranked"><div class="icon-circle">S</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box ht1"><div class="icon-circle">س</div><span class="tier-val ht1">HT1</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ف</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">م</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ر</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box ht1"><div class="icon-circle">SW</div><span class="tier-val ht1">HT1</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">AX</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">M</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">SM</div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
 
@@ -392,21 +390,21 @@
                     <img src="https://mc-heads.net/avatar/Mustfa_105/45" class="avatar" alt="skin">
                     <div>
                         <div class="name">Mustfa_105</div>
-                        <div class="details">(42 نقطة) متخصص قتالي</div>
+                        <div class="details">Combat Specialist (42 points)</div>
                     </div>
                 </div>
-                <div class="region">الاتحاد الأوروبي</div>
+                <div class="region">EU</div>
             </div>
             <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle">ف</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ت</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">و</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ن</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">C</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">A</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">P</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">N</div><span class="tier-val unranked">Unranked</span></div>
                 <div class="tier-box lt3"><div class="icon-circle">S</div><span class="tier-val lt3">LT3</span></div>
-                <div class="tier-box ht3"><div class="icon-circle">س</div><span class="tier-val ht3">HT3</span></div>
-                <div class="tier-box lt2"><div class="icon-circle">ف</div><span class="tier-val lt2">LT2</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">م</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ر</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box ht3"><div class="icon-circle">SW</div><span class="tier-val ht3">HT3</span></div>
+                <div class="tier-box lt2"><div class="icon-circle">AX</div><span class="tier-val lt2">LT2</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">M</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">SM</div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
 
@@ -418,21 +416,21 @@
                     <img src="https://mc-heads.net/avatar/iraizen/45" class="avatar" alt="skin">
                     <div>
                         <div class="name">iraizen</div>
-                        <div class="details">(38 نقطة) طالب عسكري</div>
+                        <div class="details">Combat Cadet (38 points)</div>
                     </div>
                 </div>
-                <div class="region">الاتحاد الأوروبي</div>
+                <div class="region">EU</div>
             </div>
             <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle">ف</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ت</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">و</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ن</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">C</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">A</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">P</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">N</div><span class="tier-val unranked">Unranked</span></div>
                 <div class="tier-box ht4"><div class="icon-circle">S</div><span class="tier-val ht4">HT4</span></div>
-                <div class="tier-box lt3"><div class="icon-circle">س</div><span class="tier-val lt3">LT3</span></div>
-                <div class="tier-box ht4"><div class="icon-circle">ف</div><span class="tier-val ht4">HT4</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">م</div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle">ر</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box lt3"><div class="icon-circle">SW</div><span class="tier-val lt3">LT3</span></div>
+                <div class="tier-box ht4"><div class="icon-circle">AX</div><span class="tier-val ht4">HT4</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">M</div><span class="tier-val unranked">Unranked</span></div>
+                <div class="tier-box unranked"><div class="icon-circle">SM</div><span class="tier-val unranked">Unranked</span></div>
             </div>
         </div>
     </div>
@@ -441,16 +439,16 @@
     <div id="infoModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>النقاط وألقاب الإنجازات</h3>
+                <h3>Points & Ranks Info</h3>
                 <button class="close-btn" onclick="closeModal()">×</button>
             </div>
             
-            <div class="modal-section-title">حساب النقاط</div>
-            <div class="modal-row"><span>HT1</span><span>60 نقطة | LT1: 45 نقطة</span></div>
-            <div class="modal-row"><span>HT2</span><span>30 نقطة | LT2: 20 نقطة</span></div>
-            <div class="modal-row"><span>HT3</span><span>10 نقاط | LT3: 6 نقاط</span></div>
-            <div class="modal-row"><span>HT4</span><span>4 نقاط | LT4: 3 نقاط</span></div>
-            <div class="modal-row"><span>HT5</span><span>نقطتان | LT5: نقطة واحدة</span></div>
+            <div class="modal-section-title">Points Calculation</div>
+            <div class="modal-row"><span>HT1</span><span>60 pts | LT1: 45 pts</span></div>
+            <div class="modal-row"><span>HT2</span><span>30 pts | LT2: 20 pts</span></div>
+            <div class="modal-row"><span>HT3</span><span>10 pts | LT3: 6 pts</span></div>
+            <div class="modal-row"><span>HT4</span><span>4 pts | LT4: 3 pts</span></div>
+            <div class="modal-row"><span>HT5</span><span>2 pts | LT5: 1 pt</span></div>
         </div>
     </div>
 
