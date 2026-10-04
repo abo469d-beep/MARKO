@@ -1,481 +1,164 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIKEY TIERS</title>
+    <title>MIKEY TIERS - Profile Tiers</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
         body {
-            background-color: #0b0d14;
-            color: #ffffff;
-            padding: 10px;
-        }
-        header {
+            background-color: #0f1117;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            background: #12151f;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #1c2130;
-        }
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #ff3366;
-            letter-spacing: 1px;
-        }
-        .discord-btn {
-            background-color: #5865F2;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .info-card {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #12151f;
-            padding: 12px 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #1c2130;
-        }
-        .info-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .info-icon-btn {
-            background: #191e2c;
-            border: 1px solid #252d42;
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 13px;
-            color: #ffffff;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .info-icon-btn:hover {
-            border-color: #ff3366;
-        }
-        .info-text {
-            font-size: 13px;
-            color: #94a3b8;
-        }
-        .info-text span {
-            color: #ffffff;
-            font-weight: bold;
+            height: 100vh;
+            margin: 0;
         }
 
-        .categories {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+        .player-profile-card {
+            background-color: #161922;
+            border: 1px solid #232733;
+            border-radius: 14px;
+            padding: 20px 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            max-width: 100%;
         }
-        .category-item {
-            background: #161a26;
-            padding: 8px 14px;
-            border-radius: 12px;
-            white-space: nowrap;
-            font-size: 13px;
-            border: 1px solid #22283d;
-            cursor: pointer;
-            color: #94a3b8;
+
+        .tier-list-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 5px 0;
+        }
+
+        .tier-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
-            transition: 0.2s;
-        }
-        .category-item.active {
-            background: #251622;
-            border-color: #ff3366;
-            color: #ff3366;
-        }
-        
-        .card {
-            background: #12151f;
-            border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 12px;
-            border: 1px solid #1c2130;
-        }
-        .card.rank-1 {
-            background: linear-gradient(135deg, rgba(241, 196, 15, 0.15) 0%, #12151f 55%);
-            border-color: #f1c40f;
-        }
-        .card.rank-2 {
-            background: linear-gradient(135deg, rgba(164, 176, 190, 0.15) 0%, #12151f 55%);
-            border-color: #a4b0be;
-        }
-        .card.rank-3 {
-            background: linear-gradient(135deg, rgba(230, 126, 34, 0.15) 0%, #12151f 55%);
-            border-color: #e67e22;
-        }
-
-        .card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .player-main {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .rank-num {
-            font-weight: bold;
-            font-size: 18px;
-            color: #ffffff;
-        }
-        .avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 8px;
-            background: #1c2130;
-            object-fit: cover;
-        }
-        .name {
-            font-weight: bold;
-            font-size: 16px;
-            color: #ffffff;
-        }
-        .details {
-            font-size: 12px;
-            color: #cbd5e1;
-            margin-top: 2px;
-        }
-        .region {
-            background: #064e3b;
-            color: #34d399;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .tiers-grid {
-            display: flex;
             gap: 8px;
-            overflow-x: auto;
-            padding-top: 8px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 55px;
         }
-        .tier-box {
-            background: #191e2c;
-            border: 1px solid #252d42;
-            padding: 8px 6px;
-            border-radius: 10px;
-            font-size: 11px;
-            text-align: center;
-            min-width: 65px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-        }
+
         .icon-circle {
-            width: 32px;
-            height: 32px;
-            background: #12151f;
-            border: 1px solid #2a344d;
+            width: 48px;
+            height: 48px;
+            background-color: #212533;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
         }
+
         .icon-circle img {
-            width: 18px;
-            height: 18px;
-            object-fit: contain;
-        }
-        
-        .tier-box.unranked {
-            border-color: #252d42;
-            background: #191e2c;
-        }
-        .tier-val.unranked {
-            color: #64748b;
-            font-size: 10px;
+            width: 24px;
+            height: 24px;
+            filter: brightness(0.7);
+            transition: filter 0.2s ease;
         }
 
-        /* ألوان الرتب الدقيقة حسب رتب الديسكورد */
-        .tier-box.ht1 { border-color: #f1c40f; background: #2c2514; }
-        .tier-val.ht1 { color: #f1c40f; font-weight: bold; }
-
-        .tier-box.lt1 { border-color: #f39c12; background: #2c1f10; }
-        .tier-val.lt1 { color: #f39c12; font-weight: bold; }
-
-        .tier-box.ht2 { border-color: #e67e22; background: #2c1d14; }
-        .tier-val.ht2 { color: #e67e22; font-weight: bold; }
-
-        .tier-box.lt2 { border-color: #d35400; background: #2c1811; }
-        .tier-val.lt2 { color: #d35400; font-weight: bold; }
-
-        .tier-box.ht3 { border-color: #e74c3c; background: #2c1515; }
-        .tier-val.ht3 { color: #e74c3c; font-weight: bold; }
-
-        .tier-box.lt3 { border-color: #c0392b; background: #251212; }
-        .tier-val.lt3 { color: #c0392b; font-weight: bold; }
-
-        .tier-box.ht4 { border-color: #9b59b6; background: #201325; }
-        .tier-val.ht4 { color: #9b59b6; font-weight: bold; }
-
-        .tier-box.lt4 { border-color: #8e44ad; background: #1c1022; }
-        .tier-val.lt4 { color: #8e44ad; font-weight: bold; }
-
-        .tier-box.ht5 { border-color: #5dade2; background: #13222a; }
-        .tier-val.ht5 { color: #5dade2; font-weight: bold; }
-
-        .tier-box.lt5 { border-color: #2980b9; background: #101c26; }
-        .tier-val.lt5 { color: #2980b9; font-weight: bold; }
-
-        /* نافذة معلومات النقاط والألقاب */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 15px;
+        .tier-text {
+            font-size: 11px;
+            color: #6b7280;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
-        .modal-content {
-            background: #12151f;
-            border: 1px solid #1c2130;
-            border-radius: 14px;
-            width: 100%;
-            max-width: 450px;
-            padding: 20px;
-            max-height: 90vh;
-            overflow-y: auto;
+
+        /* تنسيق العنصر النشط المحدد باللون الأصفر */
+        .tier-item.active .icon-circle {
+            border-color: #f59e0b;
+            background-color: #262a3b;
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
         }
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #1c2130;
-            padding-bottom: 10px;
+
+        .tier-item.active .icon-circle img {
+            filter: brightness(1.2);
         }
-        .modal-header h3 {
-            color: #ffffff;
-            font-size: 16px;
-        }
-        .close-btn {
-            background: none;
-            border: none;
-            color: #94a3b8;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        .modal-section-title {
-            color: #ff3366;
-            font-size: 14px;
-            font-weight: bold;
-            margin: 15px 0 8px 0;
-        }
-        .modal-row {
-            display: flex;
-            justify-content: space-between;
-            background: #191e2c;
-            padding: 8px 12px;
-            border-radius: 8px;
-            margin-bottom: 6px;
-            font-size: 12px;
-            border: 1px solid #252d42;
+
+        .tier-item.active .tier-text {
+            color: #f59e0b;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">MIKEY TIERS</div>
-        <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-btn">
-            <span>Join Discord</span>
-        </a>
-    </header>
-
-    <div class="info-card">
-        <div class="info-left">
-            <button class="info-icon-btn" onclick="openModal()">Info</button>
-            <div class="info-text">
-                Tests are held on Discord<br>
-                <span>Mikey Tiers Server</span>
-            </div>
-        </div>
-        <a href="https://discord.gg/4JBYpQDDRk" target="_blank" class="discord-btn">
-            <span>Join</span>
-        </a>
-    </div>
-
-    <!-- الأزرار العلوية للفرز الفوري -->
-    <div class="categories">
-        <div class="category-item active" onclick="filterCategory('overall', this)">Overall</div>
-        <div class="category-item" onclick="filterCategory('pot', this)">Pot</div>
-        <div class="category-item" onclick="filterCategory('nethop', this)">NethOp</div>
-        <div class="category-item" onclick="filterCategory('smp', this)">SMP</div>
-        <div class="category-item" onclick="filterCategory('sword', this)">Sword</div>
-        <div class="category-item" onclick="filterCategory('axe', this)">Axe</div>
-        <div class="category-item" onclick="filterCategory('mace', this)">Mace</div>
-        <div class="category-item" onclick="filterCategory('spearmace', this)">Spear Mace</div>
-    </div>
-
-    <div id="players-container">
-        <!-- المركز الأول -->
-        <div class="card rank-1" data-pot="99" data-nethop="99" data-smp="99" data-sword="1" data-axe="99" data-mace="99" data-spearmace="99" data-score="60">
-            <div class="card-top">
-                <div class="player-main">
-                    <span class="rank-num">1.</span>
-                    <img src="https://mc-heads.net/avatar/iRuby_X/45" class="avatar" alt="skin">
-                    <div>
-                        <div class="name">iRuby_X</div>
-                        <div class="details">Combat Specialist (60 points)</div>
-                    </div>
+    <div class="player-profile-card">
+        <div class="tier-list-bar">
+            <!-- Crystal / SMP -->
+            <div class="tier-item">
+                <div class="icon-circle">
+                    <img src="smp_2.svg" alt="Crystal">
                 </div>
-                <div class="region">EU</div>
+                <span class="tier-text">Unranked</span>
             </div>
-            <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2364748b" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2364748b" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%2364748b" alt="SMP"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box ht1"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23f1c40f" alt="Sword"></div><span class="tier-val ht1">HT1</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%2364748b" alt="Axe"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2364748b" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2364748b" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
-            </div>
-        </div>
 
-        <!-- المركز الثاني -->
-        <div class="card rank-2" data-pot="99" data-nethop="99" data-smp="8" data-sword="5" data-axe="4" data-mace="99" data-spearmace="99" data-score="42">
-            <div class="card-top">
-                <div class="player-main">
-                    <span class="rank-num">2.</span>
-                    <img src="https://mc-heads.net/avatar/Mustfa_105/45" class="avatar" alt="skin">
-                    <div>
-                        <div class="name">Mustfa_105</div>
-                        <div class="details">Combat Cadet (42 points)</div>
-                    </div>
+            <!-- UHC -->
+            <div class="tier-item">
+                <div class="icon-circle">
+                    <img src="uhc.svg" alt="UHC">
                 </div>
-                <div class="region">EU</div>
+                <span class="tier-text">Unranked</span>
             </div>
-            <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2364748b" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2364748b" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box lt3"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%23c0392b" alt="SMP"></div><span class="tier-val lt3">LT3</span></div>
-                <div class="tier-box ht3"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23e74c3c" alt="Sword"></div><span class="tier-val ht3">HT3</span></div>
-                <div class="tier-box lt2"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%23d35400" alt="Axe"></div><span class="tier-val lt2">LT2</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2364748b" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2364748b" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
-            </div>
-        </div>
 
-        <!-- المركز الثالث -->
-        <div class="card rank-3" data-pot="99" data-nethop="99" data-smp="7" data-sword="6" data-axe="7" data-mace="99" data-spearmace="99" data-score="38">
-            <div class="card-top">
-                <div class="player-main">
-                    <span class="rank-num">3.</span>
-                    <img src="https://mc-heads.net/avatar/iraizen/45" class="avatar" alt="skin">
-                    <div>
-                        <div class="name">iraizen</div>
-                        <div class="details">Combat Cadet (38 points)</div>
-                    </div>
+            <!-- Pot -->
+            <div class="tier-item">
+                <div class="icon-circle">
+                    <img src="pot (1).svg" alt="Pot">
                 </div>
-                <div class="region">EU</div>
+                <span class="tier-text">Unranked</span>
             </div>
-            <div class="tiers-grid">
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:flask-conical.svg?color=%2364748b" alt="Pot"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:shield.svg?color=%2364748b" alt="NethOp"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box ht4"><div class="icon-circle"><img src="https://api.iconify.design/lucide:gem.svg?color=%239b59b6" alt="SMP"></div><span class="tier-val ht4">HT4</span></div>
-                <div class="tier-box lt3"><div class="icon-circle"><img src="https://api.iconify.design/lucide:sword.svg?color=%23c0392b" alt="Sword"></div><span class="tier-val lt3">LT3</span></div>
-                <div class="tier-box ht4"><div class="icon-circle"><img src="https://api.iconify.design/lucide:axe.svg?color=%239b59b6" alt="Axe"></div><span class="tier-val ht4">HT4</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:hammer.svg?color=%2364748b" alt="Mace"></div><span class="tier-val unranked">Unranked</span></div>
-                <div class="tier-box unranked"><div class="icon-circle"><img src="https://api.iconify.design/lucide:forklift.svg?color=%2364748b" alt="Spear"></div><span class="tier-val unranked">Unranked</span></div>
+
+            <!-- NethOP -->
+            <div class="tier-item">
+                <div class="icon-circle">
+                    <img src="nethop.svg" alt="NethOP">
+                </div>
+                <span class="tier-text">Unranked</span>
+            </div>
+
+            <!-- Vanilla -->
+            <div class="tier-item">
+                <div class="icon-circle">
+                    <img src="vanilla_2.svg" alt="Vanilla">
+                </div>
+                <span class="tier-text">Unranked</span>
+            </div>
+
+            <!-- Sword (Active / HT1) -->
+            <div class="tier-item active">
+                <div class="icon-circle">
+                    <img src="sword_2.svg" alt="Sword">
+                </div>
+                <span class="tier-text">HT1</span>
+            </div>
+
+            <!-- Axe -->
+            <div class="tier-item">
+                <div class="icon-circle">
+                    <img src="axe_2.svg" alt="Axe">
+                </div>
+                <span class="tier-text">Unranked</span>
+            </div>
+
+            <!-- Mace -->
+            <div class="tier-item">
+                <div class="icon-circle">
+                    <img src="mace_2.svg" alt="Mace">
+                </div>
+                <span class="tier-text">Unranked</span>
+            </div>
+
+            <!-- Spear Mace -->
+            <div class="tier-item">
+                <div class="icon-circle">
+                    <img src="spearmace_2.svg" alt="Spear Mace">
+                </div>
+                <span class="tier-text">Unranked</span>
             </div>
         </div>
     </div>
 
-    <!-- نافذة معلومات النقاط والألقاب -->
-    <div id="infoModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>النقاط وألقاب الإنجازات</h3>
-                <button class="close-btn" onclick="closeModal()">×</button>
-            </div>
-            
-            <div class="modal-section-title">حساب النقاط</div>
-            <div class="modal-row"><span>HT1</span><span>60 نقطة | LT1: 45 نقطة</span></div>
-            <div class="modal-row"><span>HT2</span><span>30 نقطة | LT2: 20 نقطة</span></div>
-            <div class="modal-row"><span>HT3</span><span>10 نقاط | LT3: 6 نقاط</span></div>
-            <div class="modal-row"><span>HT4</span><span>4 نقاط | LT4: 3 نقاط</span></div>
-            <div class="modal-row"><span>HT5</span><span>نقطتان | LT5: نقطة واحدة</span></div>
-
-            <div class="modal-section-title">ألقاب الإنجازات</div>
-            <div class="modal-row"><span>أستاذ فنون القتال</span><span>أكثر من 400 نقطة</span></div>
-            <div class="modal-row"><span>سيد القتال</span><span>أكثر من 250 نقطة</span></div>
-            <div class="modal-row"><span>بطل القتال</span><span>أكثر من 100 نقطة</span></div>
-            <div class="modal-row"><span>متخصص قتالي</span><span>50+ نقطة</span></div>
-            <div class="modal-row"><span>طالب عسكري قتالي</span><span>20+ نقطة</span></div>
-            <div class="modal-row"><span>مبتدئ في القتال</span><span>1+ نقاط</span></div>
-            <div class="modal-row"><span>مبتدئ</span><span>أقل من 10 نقاط</span></div>
-        </div>
-    </div>
-
-    <script>
-        function openModal() {
-            document.getElementById('infoModal').style.display = 'flex';
-        }
-        function closeModal() {
-            document.getElementById('infoModal').style.display = 'none';
-        }
-
-        function filterCategory(category, element) {
-            document.querySelectorAll('.category-item').forEach(item => item.classList.remove('active'));
-            element.classList.add('active');
-
-            const container = document.getElementById('players-container');
-            const cards = Array.from(container.getElementsByClassName('card'));
-
-            if (category === 'overall') {
-                cards.sort((a, b) => parseInt(b.dataset.score) - parseInt(a.dataset.score));
-            } else {
-                cards.sort((a, b) => {
-                    let valA = parseInt(a.dataset[category]) || 99;
-                    let valB = parseInt(b.dataset[category]) || 99;
-                    return valA - valB;
-                });
-            }
-
-            cards.forEach((card) => {
-                container.appendChild(card);
-            });
-        }
-    </script>
 </body>
 </html>
